@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUPPLIER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SUPPLIER_ID xsi:nil="true"/>
+  <SUPPLIER_NAME><![CDATA[TestSupplier]]></SUPPLIER_NAME>
+  <ADDRESS xsi:nil="true"/>
+  <MIME_INFO xsi:nil="true"/>
+</SUPPLIER>

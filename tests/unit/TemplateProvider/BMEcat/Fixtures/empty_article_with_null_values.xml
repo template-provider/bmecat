@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARTICLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true">
+  <SUPPLIER_AID><![CDATA[foo]]></SUPPLIER_AID>
+  <ARTICLE_DETAILS xsi:nil="true">
+    <DESCRIPTION_SHORT><![CDATA[bar]]></DESCRIPTION_SHORT>
+    <DESCRIPTION_LONG xsi:nil="true"/>
+    <EAN xsi:nil="true"/>
+    <SUPPLIER_ALT_AID xsi:nil="true"/>
+    <MANUFACTURER_AID xsi:nil="true"/>
+    <MANUFACTURER_NAME xsi:nil="true"/>
+    <MANUFACTURER_TYPE_DESCR xsi:nil="true"/>
+    <ERP_GROUP_BUYER xsi:nil="true"/>
+    <ERP_GROUP_SUPPLIER xsi:nil="true"/>
+    <DELIVERY_TIME xsi:nil="true"/>
+    <REMARKS xsi:nil="true"/>
+    <SEGMENT xsi:nil="true"/>
+    <ARTICLE_ORDER xsi:nil="true"/>
+  </ARTICLE_DETAILS>
+  <ARTICLE_ORDER_DETAILS>
+    <ORDER_UNIT><![CDATA[]]></ORDER_UNIT>
+    <CONTENT_UNIT xsi:nil="true"/>
+    <NO_CU_PER_OU xsi:nil="true"/>
+    <PRICE_QUANTITY xsi:nil="true"/>
+    <QUANTITY_MIN xsi:nil="true"/>
+    <QUANTITY_INTERVAL xsi:nil="true"/>
+  </ARTICLE_ORDER_DETAILS>
+  <MIME_INFO xsi:nil="true"/>
+</ARTICLE>

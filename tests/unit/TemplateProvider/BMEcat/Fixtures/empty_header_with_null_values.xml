@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HEADER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GENERATOR_INFO xsi:nil="true"/>
+  <CATALOG>
+    <CATALOG_ID><![CDATA[]]></CATALOG_ID>
+    <CATALOG_VERSION><![CDATA[]]></CATALOG_VERSION>
+    <LANGUAGE><![CDATA[]]></LANGUAGE>
+    <CATALOG_NAME xsi:nil="true"/>
+    <DATETIME xsi:nil="true"/>
+    <TERRITORY xsi:nil="true"/>
+    <CURRENCY xsi:nil="true"/>
+    <MIME_ROOT xsi:nil="true"/>
+    <PRICE_FLAG xsi:nil="true"/>
+  </CATALOG>
+  <SUPPLIER>
+    <SUPPLIER_ID xsi:nil="true"/>
+    <SUPPLIER_NAME><![CDATA[]]></SUPPLIER_NAME>
+    <ADDRESS xsi:nil="true"/>
+    <MIME_INFO xsi:nil="true"/>
+  </SUPPLIER>
+  <BUYER xsi:nil="true"/>
+  <AGREEMENT xsi:nil="true"/>
+</HEADER>

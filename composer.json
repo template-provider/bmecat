@@ -1,0 +1,40 @@
+{
+    "name": "template-provider/bmecat",
+    "type": "library",
+    "description": "Build BMECat documents",
+    "keywords": ["bmecat"],
+    "homepage": "https://github.com/template-provider/bmecat",
+    "license": "LGPL-3.0-or-later",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Jan Gantzert",
+            "email": "jan.gantzert@template-provider.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "jms/serializer": "^3.13.0",
+        "symfony/expression-language": "^5.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.19.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+        "phpcompatibility/php-compatibility": "^9.3.5",
+        "phpstan/extension-installer": "^1.1.0",
+        "phpstan/phpstan": "^0.12.94",
+        "phpstan/phpstan-mockery": "^0.12.14",
+        "phpstan/phpstan-strict-rules": "^0.12.10",
+        "phpunit/phpunit": "^9.5.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "TemplateProvider\\BMEcat\\": "src/TemplateProvider/BMEcat/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TemplateProvider\\BMEcat\\": "tests/unit/TemplateProvider/BMEcat/"
+        }
+    }
+}
