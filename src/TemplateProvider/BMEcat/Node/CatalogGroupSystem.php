@@ -28,7 +28,7 @@ class CatalogGroupSystem extends AbstractNode
     /**
      * @Serializer\Expose
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\CatalogStructure>")
-     * @Serializer\SerializedName("CATALOG_STRUCTURE")
+     * @Serializer\XmlList(inline = true, entry = "CATALOG_STRUCTURE")
      *
      * @var \TemplateProvider\BMEcat\Node\CatalogStructure[]
      */
