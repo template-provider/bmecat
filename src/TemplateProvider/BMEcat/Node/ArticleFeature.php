@@ -30,6 +30,8 @@ class ArticleFeature extends AbstractNode
      * @Serializer\Expose
      * @Serializer\Type("array")
      * @Serializer\SerializedName("FVALUE")
+     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\FeatureValue>")
+     * @Serializer\XmlList(inline=true, entry="FVALUE")
      *
      * @var \TemplateProvider\BMEcat\Node\FeatureValue[]
      */
