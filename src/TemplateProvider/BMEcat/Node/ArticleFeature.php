@@ -23,7 +23,6 @@ class ArticleFeature extends AbstractNode
      * @Serializer\Type("string")
      * @Serializer\SerializedName("VARIANTS")
      * @Serializer\SkipWhenEmpty
-     * @Serializer\Exclude(if="empty($this->value)")
      */
     protected string $variants = '';
 
