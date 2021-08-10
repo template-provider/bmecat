@@ -102,7 +102,7 @@ class ArticleDetails extends AbstractNode
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleKeyword>")
+     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Keyword>")
      * @Serializer\XmlList(inline=true, entry="KEYWORD")
      *
      * @var \TemplateProvider\BMEcat\Node\Keyword[]
