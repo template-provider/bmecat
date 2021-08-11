@@ -30,7 +30,7 @@ class Buyer extends AbstractNode
      * @Serializer\Type("TemplateProvider\BMEcat\Node\Address")
      * @Serializer\SerializedName("ADDRESS")
      */
-    protected Address $address;
+    protected ?Address $address = null;
 
     public function getId(): ?BuyerId
     {
@@ -52,12 +52,12 @@ class Buyer extends AbstractNode
         $this->name = $name;
     }
 
-    public function getAddress(): Address
+    public function getAddress(): ?Address
     {
         return $this->address;
     }
 
-    public function setAddress(Address $address): void
+    public function setAddress(?Address $address): void
     {
         $this->address = $address;
     }
