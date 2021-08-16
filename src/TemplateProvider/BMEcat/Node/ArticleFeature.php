@@ -23,19 +23,20 @@ class ArticleFeature extends AbstractNode
      * @Serializer\Type("string")
      * @Serializer\SerializedName("VARIANTS")
      * @Serializer\SkipWhenEmpty
+     * @Serializer\Exclude(if="!empty(object.getValue())")
      */
-    protected string $variants = '';
+    protected ?string $variants = null;
 
     /**
      * @Serializer\Expose
-     * @Serializer\Type("array")
      * @Serializer\SerializedName("FVALUE")
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\FeatureValue>")
      * @Serializer\XmlList(inline=true, entry="FVALUE")
+     * @Serializer\Exclude(if="!empty(object.getVariants())")
      *
-     * @var \TemplateProvider\BMEcat\Node\FeatureValue[]
+     * @var FeatureValue[]
      */
-    protected ?array $value = [];
+    protected ?array $value = null;
 
     /**
      * @Serializer\Expose
@@ -81,21 +82,27 @@ class ArticleFeature extends AbstractNode
         $this->name = $name;
     }
 
-    public function getVariants(): string
+    public function getVariants(): ?string
     {
         return $this->variants;
     }
 
-    public function setVariants(string $variants): void
+    public function setVariants(?string $variants): void
     {
         $this->variants = $variants;
     }
 
+    /**
+     * @return null|FeatureValue[]
+     */
     public function getValue(): ?array
     {
         return $this->value;
     }
 
+    /**
+     * @param null|FeatureValue[] $value
+     */
     public function setValue(?array $value): void
     {
         $this->value = $value;

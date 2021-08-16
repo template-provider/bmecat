@@ -44,7 +44,7 @@ class ArticleDetails extends AbstractNode
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\BuyerAid>")
      * @Serializer\XmlList(inline=true, entry="BUYER_AID")
      *
-     * @var \TemplateProvider\BMEcat\Node\BuyerAid[]
+     * @var BuyerAid[]
      */
     protected ?array $buyerAids = null;
 
@@ -96,7 +96,7 @@ class ArticleDetails extends AbstractNode
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\SpecialTreatmentClass>")
      * @Serializer\XmlList(inline=true, entry="SPECIAL_TREATMENT_CLASS")
      *
-     * @var \TemplateProvider\BMEcat\Node\SpecialTreatmentClass[]
+     * @var SpecialTreatmentClass[]
      */
     protected ?array $specialTreatmentClasses = null;
 
@@ -105,7 +105,7 @@ class ArticleDetails extends AbstractNode
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Keyword>")
      * @Serializer\XmlList(inline=true, entry="KEYWORD")
      *
-     * @var \TemplateProvider\BMEcat\Node\Keyword[]
+     * @var Keyword[]
      */
     protected ?array $keywords = null;
 
@@ -136,7 +136,7 @@ class ArticleDetails extends AbstractNode
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleStatus>")
      * @Serializer\XmlList(inline=true, entry="ARTICLE_STATUS")
      *
-     * @var \TemplateProvider\BMEcat\Node\ArticleStatus[]
+     * @var ArticleStatus[]
      */
     protected ?array $articleStatus = null;
 
@@ -180,11 +180,17 @@ class ArticleDetails extends AbstractNode
         $this->supplierAltAid = $supplierAltAid;
     }
 
+    /**
+     * @return BuyerAid[]|null
+     */
     public function getBuyerAids(): ?array
     {
         return $this->buyerAids;
     }
 
+    /**
+     * @param BuyerAid[]|null $buyerAids
+     */
     public function setBuyerAids(?array $buyerAids): void
     {
         $this->buyerAids = $buyerAids;
@@ -255,11 +261,17 @@ class ArticleDetails extends AbstractNode
         $this->deliveryTime = $deliveryTime;
     }
 
+    /**
+     * @return null|SpecialTreatmentClass[]
+     */
     public function getSpecialTreatmentClasses(): ?array
     {
         return $this->specialTreatmentClasses;
     }
 
+    /**
+     * @param null|SpecialTreatmentClass[] $specialTreatmentClasses
+     */
     public function setSpecialTreatmentClasses(?array $specialTreatmentClasses): void
     {
         $this->specialTreatmentClasses = $specialTreatmentClasses;
@@ -270,11 +282,17 @@ class ArticleDetails extends AbstractNode
         $this->specialTreatmentClasses[] = $specialTreatmentClass;
     }
 
+    /**
+     * @return null|Keyword[]
+     */
     public function getKeywords(): ?array
     {
         return $this->keywords;
     }
 
+    /**
+     * @param null|Keyword[] $keywords
+     */
     public function setKeywords(?array $keywords): void
     {
         $this->keywords = $keywords;
@@ -315,11 +333,17 @@ class ArticleDetails extends AbstractNode
         $this->articleOrder = $articleOrder;
     }
 
+    /**
+     * @return null|ArticleStatus[]
+     */
     public function getArticleStatus(): ?array
     {
         return $this->articleStatus;
     }
 
+    /**
+     * @param null|ArticleStatus[] $articleStatus
+     */
     public function setArticleStatus(?array $articleStatus): void
     {
         $this->articleStatus = $articleStatus;

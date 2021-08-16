@@ -36,9 +36,9 @@ class ArticleFeatures extends AbstractNode
      * @Serializer\Expose
      * @Serializer\SerializedName("FEATURE")
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleFeature>")
-     * @Serializer\XmlList( entry="FEATURE")
+     * @Serializer\XmlList(inline=true, entry="FEATURE")
      *
-     * @var \TemplateProvider\BMEcat\Node\ArticleFeature[]
+     * @var ArticleFeature[]
      */
     protected ?array $features = null;
 
@@ -72,11 +72,17 @@ class ArticleFeatures extends AbstractNode
         $this->referenceFeatureGroupId = $referenceFeatureGroupId;
     }
 
+    /**
+     * @return null|ArticleFeature[]
+     */
     public function getFeatures(): ?array
     {
         return $this->features;
     }
 
+    /**
+     * @param null|ArticleFeature[] $features
+     */
     public function setFeatures(?array $features): void
     {
         $this->features = $features;
