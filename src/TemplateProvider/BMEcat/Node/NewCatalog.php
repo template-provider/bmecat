@@ -50,7 +50,7 @@ class NewCatalog extends AbstractNode
     /**
      * @Serializer\Expose
      * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap>")
-     * @Serializer\XmlList(inline = true, entry = "ARTICLE_TO_CATALOG_GROUP_SYSTEMS")
+     * @Serializer\XmlList(inline = true, entry = "ARTICLE_TO_CATALOGGROUP_MAP")
      *
      * @var \TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap[]
      */
