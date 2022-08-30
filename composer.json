@@ -5,7 +5,7 @@
     "keywords": ["bmecat"],
     "homepage": "https://github.com/template-provider/bmecat",
     "license": "LGPL-3.0-or-later",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "authors": [
         {
             "name": "Jan Gantzert",
@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.1",
         "jms/serializer": "^3.13.0",
         "symfony/expression-language": "^5.0"
     },
@@ -35,6 +35,12 @@
     "autoload-dev": {
         "psr-4": {
             "TemplateProvider\\BMEcat\\": "tests/unit/TemplateProvider/BMEcat/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
     }
 }
