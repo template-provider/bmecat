@@ -6,16 +6,12 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ALLOWED_VALUES")
- */
+#[Serializer\XmlRoot('ALLOWED_VALUES')]
 class ClassificationGroupSynonyms extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Synonym")
-     * @Serializer\SerializedName("SYNONYM")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Synonym::class)]
+    #[Serializer\SerializedName('SYNONYM')]
     protected array $synonyms = [];
 
     public function getSynonyms(): array

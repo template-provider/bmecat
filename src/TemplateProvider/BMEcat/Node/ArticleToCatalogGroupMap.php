@@ -6,30 +6,22 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE_TO_CATALOGGROUP_MAP")
- */
+#[Serializer\XmlRoot('ARTICLE_TO_CATALOGGROUP_MAP')]
 class ArticleToCatalogGroupMap extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ART_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ART_ID')]
     protected string $artId = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_GROUP_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_GROUP_ID')]
     protected string $catalogGroupId = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ARTICLE_TO_CATALOGGROUP_MAP_ORDER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ARTICLE_TO_CATALOGGROUP_MAP_ORDER')]
     protected ?string $articleToCatalogGroupMapOrder = null;
 
     public function getArtId(): string

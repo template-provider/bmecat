@@ -6,70 +6,62 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("FEATURE")
- */
+#[Serializer\XmlRoot('FEATURE')]
 class ArticleFeature extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FNAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FNAME')]
     protected string $name = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("VARIANTS")
-     * @Serializer\SkipWhenEmpty
-     * @Serializer\Exclude(if="!empty(object.getValue())")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('VARIANTS')]
+    #[Serializer\SkipWhenEmpty]
+    #[Serializer\Exclude(if: '!empty(object.getValue())')]
     protected ?string $variants = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("FVALUE")
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\FeatureValue>")
-     * @Serializer\XmlList(inline=true, entry="FVALUE")
-     * @Serializer\Exclude(if="!empty(object.getVariants())")
      *
      * @var FeatureValue[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('FVALUE')]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureValue>')]
+    #[Serializer\XmlList(inline: true, entry: 'FVALUE')]
+    #[Serializer\Exclude(if: '!empty(object.getVariants())')]
     protected ?array $value = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FUNIT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FUNIT')]
     protected ?string $unit = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FORDER")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FORDER')]
     protected ?string $order = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FDESCR")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FDESCR')]
     protected ?string $description = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FVALUE_DETAILS")
      *
      * @var string
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FVALUE_DETAILS')]
     protected ?string $valueDetails = null;
 
     public function getName(): string

@@ -6,30 +6,22 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ALLOWED_VALUE")
- */
+#[Serializer\XmlRoot('ALLOWED_VALUE')]
 class AllowedValue extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ALLOWED_VALUE_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ALLOWED_VALUE_ID')]
     protected string $id = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ALLOWED_VALUE_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ALLOWED_VALUE_NAME')]
     protected string $name = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ALLOWED_VALUE_DESCR")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ALLOWED_VALUE_DESCR')]
     protected ?string $description = null;
 
     public function getId(): string

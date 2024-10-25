@@ -6,16 +6,12 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("UNITS")
- */
+#[Serializer\XmlRoot('UNITS')]
 class Units extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Unit")
-     * @Serializer\SerializedName("UNIT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Unit::class)]
+    #[Serializer\SerializedName('UNIT')]
     protected array $units = [];
 
     public function getUnits(): array

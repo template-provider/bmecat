@@ -6,15 +6,11 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("SYNONYM")
- */
+#[Serializer\XmlRoot('SYNONYM')]
 class Synonym extends AbstractNode
 {
-    /**
-     * @Serializer\XmlValue
-     * @Serializer\Type("string")
-     */
+    #[Serializer\XmlValue]
+    #[Serializer\Type('string')]
     protected string $value = '';
 
     public function getValue(): string

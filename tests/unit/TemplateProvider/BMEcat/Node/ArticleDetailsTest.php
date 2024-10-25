@@ -176,7 +176,7 @@ class ArticleDetailsTest extends TestCase
     public function test_set_get_delivery_time(): void
     {
         $node = new ArticleDetails();
-        $value = (float) rand(10, 1000);
+        $value = (float) random_int(10, 1000);
 
         static::assertNull($node->getDeliveryTime());
         $node->setDeliveryTime($value);
@@ -196,7 +196,7 @@ class ArticleDetailsTest extends TestCase
     public function test_set_get_article_order(): void
     {
         $node = new ArticleDetails();
-        $value = rand(10, 1000);
+        $value = random_int(10, 1000);
 
         static::assertNull($node->getArticleOrder());
         $node->setArticleOrder($value);

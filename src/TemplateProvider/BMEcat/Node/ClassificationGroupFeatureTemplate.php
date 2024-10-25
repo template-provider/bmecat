@@ -6,51 +6,37 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("FT")
- */
+#[Serializer\XmlRoot('FT')]
 class ClassificationGroupFeatureTemplate extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FT_IDREF")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FT_IDREF')]
     protected string $idRef = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("bool")
-     * @Serializer\SerializedName("FT_MANDATORY")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('bool')]
+    #[Serializer\SerializedName('FT_MANDATORY')]
     protected bool $mandatory = false;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FT_DATATYPE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FT_DATATYPE')]
     protected string $dataType = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FT_UNIT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FT_UNIT')]
     protected ?string $unit = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("FT_ORDER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('FT_ORDER')]
     protected ?int $order = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\FeatureAllowedValues")
-     * @Serializer\SerializedName("FT_ALLOWED_VALUES")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\FeatureAllowedValues::class)]
+    #[Serializer\SerializedName('FT_ALLOWED_VALUES')]
     protected ?\TemplateProvider\BMEcat\Node\FeatureAllowedValues $featureAllowedValues = null;
 
     public function getIdRef(): string

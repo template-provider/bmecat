@@ -6,62 +6,48 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE_PRICE")
- */
+#[Serializer\XmlRoot('ARTICLE_PRICE')]
 class ArticlePrice extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("price_type")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('price_type')]
+    #[Serializer\XmlAttribute]
     protected string $type = 'gros_list';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("PRICE_AMOUNT")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_AMOUNT')]
+    #[Serializer\XmlElement(cdata: false)]
     protected ?float $price = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("PRICE_CURRENCY")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('PRICE_CURRENCY')]
     protected ?string $currency = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("TAX")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('TAX')]
     protected ?float $tax = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("PRICE_FACTOR")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_FACTOR')]
     protected ?float $priceFactor = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("LOWER_BOUND")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('LOWER_BOUND')]
     protected ?float $lowerBound = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Territory>")
-     * @Serializer\SerializedName("TERRITORY")
      *
      * @var \TemplateProvider\BMEcat\Node\Territory[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Territory>')]
+    #[Serializer\SerializedName('TERRITORY')]
     protected ?array $territories = null;
 
     public function getType(): string

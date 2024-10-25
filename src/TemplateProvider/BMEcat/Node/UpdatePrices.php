@@ -6,26 +6,22 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("PRICE_FLAG")
- */
+#[Serializer\XmlRoot('PRICE_FLAG')]
 class UpdatePrices extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("prev_version")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('prev_version')]
+    #[Serializer\XmlAttribute]
     protected int $type = 0;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Article>")
-     * @Serializer\XmlList(inline = true, entry = "ARTICLE")
      *
      * @var \TemplateProvider\BMEcat\Node\NewCatalogArticle[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Article>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE')]
     protected ?array $articles = null;
 
     public function getType(): int

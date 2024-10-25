@@ -6,40 +6,32 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE_FEATURES")
- */
+#[Serializer\XmlRoot('ARTICLE_FEATURES')]
 class ArticleFeatures extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("REFERENCE_FEATURE_SYSTEM_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('REFERENCE_FEATURE_SYSTEM_NAME')]
     protected ?string $referenceFeatureSystemName = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("REFERENCE_FEATURE_GROUP_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('REFERENCE_FEATURE_GROUP_NAME')]
     protected ?string $referenceFeatureGroupName = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("REFERENCE_FEATURE_GROUP_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('REFERENCE_FEATURE_GROUP_ID')]
     protected ?string $referenceFeatureGroupId = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("FEATURE")
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleFeature>")
-     * @Serializer\XmlList(inline=true, entry="FEATURE")
      *
      * @var ArticleFeature[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('FEATURE')]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleFeature>')]
+    #[Serializer\XmlList(inline: true, entry: 'FEATURE')]
     protected ?array $features = null;
 
     public function getReferenceFeatureSystemName(): ?string

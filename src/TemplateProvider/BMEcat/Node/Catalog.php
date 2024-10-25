@@ -6,74 +6,56 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("CATALOG")
- */
+#[Serializer\XmlRoot('CATALOG')]
 class Catalog extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_ID')]
     protected string $id = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_VERSION")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_VERSION')]
     protected string $version = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("LANGUAGE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('LANGUAGE')]
     protected string $language = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_NAME')]
     protected ?string $name = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\DateTime")
-     * @Serializer\SerializedName("DATETIME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\SerializedName('DATETIME')]
     protected ?DateTime $dateTime = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Territory>")
-     * @Serializer\SerializedName("TERRITORY")
      *
      * @var Territory[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Territory>')]
+    #[Serializer\SerializedName('TERRITORY')]
     protected ?array $territories = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CURRENCY")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CURRENCY')]
     protected ?string $currency = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_ROOT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_ROOT')]
     protected ?string $mimeRoot = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\PriceFlag")
-     * @Serializer\SerializedName("PRICE_FLAG")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\PriceFlag::class)]
+    #[Serializer\SerializedName('PRICE_FLAG')]
     protected ?\TemplateProvider\BMEcat\Node\PriceFlag $priceFlag = null;
 
     public function getId(): string

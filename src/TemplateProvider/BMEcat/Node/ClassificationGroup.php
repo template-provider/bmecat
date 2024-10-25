@@ -6,51 +6,37 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("CLASSIFICATION_GROUP")
- */
+#[Serializer\XmlRoot('CLASSIFICATION_GROUP')]
 class ClassificationGroup extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CLASSIFICATION_GROUP_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CLASSIFICATION_GROUP_ID')]
     protected string $id = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CLASSIFICATION_GROUP_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CLASSIFICATION_GROUP_NAME')]
     protected string $name = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CLASSIFICATION_GROUP_DESCR")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CLASSIFICATION_GROUP_DESCR')]
     protected ?string $description = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\ClassificationGroupsSynonyms")
-     * @Serializer\SerializedName("CLASSIFICATION_GROUP_SYNONYMS")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('TemplateProvider\BMEcat\Node\ClassificationGroupsSynonyms')]
+    #[Serializer\SerializedName('CLASSIFICATION_GROUP_SYNONYMS')]
     protected ?\TemplateProvider\BMEcat\Node\ClassificationGroupsSynonymsNode $classificationGroupsSynonyms = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\ClassificationGroupsFeatureTemplates")
-     * @Serializer\SerializedName("CLASSIFICATION_GROUP_FEATURE_TEMPLATES")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('TemplateProvider\BMEcat\Node\ClassificationGroupsFeatureTemplates')]
+    #[Serializer\SerializedName('CLASSIFICATION_GROUP_FEATURE_TEMPLATES')]
     protected ?\TemplateProvider\BMEcat\Node\ClassificationGroupsFeatureTemplatesNode $classificationGroupsFeatureTemplates = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CLASSIFICATION_GROUP_PARENT_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CLASSIFICATION_GROUP_PARENT_ID')]
     protected ?string $parentId = null;
 
     public function getId(): string

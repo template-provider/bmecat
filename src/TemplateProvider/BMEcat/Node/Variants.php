@@ -6,26 +6,22 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("VARIANTS")
- */
+#[Serializer\XmlRoot('VARIANTS')]
 class Variants extends AbstractNode
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Variant>")
-     * @Serializer\XmlList(inline = true, entry = "VARIANT")
      *
      * @var \TemplateProvider\BMEcat\Node\Variant[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Variant>')]
+    #[Serializer\XmlList(inline: true, entry: 'VARIANT')]
     protected array $variants = [];
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("VORDER")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('VORDER')]
+    #[Serializer\XmlElement(cdata: false)]
     protected int $articleOrder = 0;
 
     public function getVariants(): array

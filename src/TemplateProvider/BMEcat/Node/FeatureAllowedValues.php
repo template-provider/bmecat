@@ -6,16 +6,12 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("FT_ALLOWED_VALUES")
- */
+#[Serializer\XmlRoot('FT_ALLOWED_VALUES')]
 class FeatureAllowedValues extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\AllowedValueIdRef")
-     * @Serializer\SerializedName("ALLOWED_VALUE_IDREF")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\AllowedValueIdRef::class)]
+    #[Serializer\SerializedName('ALLOWED_VALUE_IDREF')]
     protected array $allowedValues = [];
 
     public function getAllowedValues(): array

@@ -6,21 +6,15 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE_STATUS")
- */
+#[Serializer\XmlRoot('ARTICLE_STATUS')]
 class ArticleStatus extends AbstractNode
 {
-    /**
-     * @Serializer\Type("string")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Type('string')]
+    #[Serializer\XmlAttribute]
     protected string $type = 'others';
 
-    /**
-     * @Serializer\XmlValue
-     * @Serializer\Type("string")
-     */
+    #[Serializer\XmlValue]
+    #[Serializer\Type('string')]
     protected string $value = '';
 
     public function getType(): string

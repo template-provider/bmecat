@@ -6,68 +6,60 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE")
- */
+#[Serializer\XmlRoot('ARTICLE')]
 class UpdateProductsArticle extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("SUPPLIER_AID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('SUPPLIER_AID')]
     protected string $id;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("ARTICLE_DETAILS")
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\ArticleDetails")
-     */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('ARTICLE_DETAILS')]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ArticleDetails::class)]
     protected ArticleDetails $detail;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleFeatures>")
-     * @Serializer\XmlList( inline=true, entry="ARTICLE_FEATURES")
      *
      * @var null|\TemplateProvider\BMEcat\Node\ArticleFeatures[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleFeatures>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE_FEATURES')]
     protected ?array $features = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("ARTICLE_ORDER_DETAILS")
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\ArticleOrderDetails")
-     */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('ARTICLE_ORDER_DETAILS')]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ArticleOrderDetails::class)]
     protected ArticleOrderDetails $orderDetails;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("ARTICLE_PRICE_DETAILS")
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticlePrice>")
-     * @Serializer\XmlList( entry="ARTICLE_PRICE")
      *
      * @var \TemplateProvider\BMEcat\Node\ArticlePrice[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('ARTICLE_PRICE_DETAILS')]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticlePrice>')]
+    #[Serializer\XmlList(entry: 'ARTICLE_PRICE')]
     protected array $prices = [];
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("MIME_INFO")
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Mime>")
-     * @Serializer\XmlList( entry="MIME")
      *
      * @var null|\TemplateProvider\BMEcat\Node\Mime[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('MIME_INFO')]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Mime>')]
+    #[Serializer\XmlList(entry: 'MIME')]
     protected ?array $mimes = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleReference>")
-     * @Serializer\XmlList( inline=true, entry="ARTICLE_REFERENCE")
      *
      * @var null|\TemplateProvider\BMEcat\Node\ArticleReference[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleReference>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE_REFERENCE')]
     protected ?array $articleReferences = null;
 
     public function getId(): string

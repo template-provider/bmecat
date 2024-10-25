@@ -40,7 +40,7 @@ class ArticleOrderDetailsTest extends TestCase
     public function test_set_get_no_cu_per_ou(): void
     {
         $node = new ArticleOrderDetails();
-        $value = (float) rand(10, 1000);
+        $value = (float) random_int(10, 1000);
 
         static::assertNull($node->getNoCuPerOu());
         $node->setNoCuPerOu($value);
@@ -50,7 +50,7 @@ class ArticleOrderDetailsTest extends TestCase
     public function test_set_get_price_quantity(): void
     {
         $node = new ArticleOrderDetails();
-        $value = (float) rand(10, 1000);
+        $value = (float) random_int(10, 1000);
 
         static::assertNull($node->getPriceQuantity());
         $node->setPriceQuantity($value);
@@ -60,7 +60,7 @@ class ArticleOrderDetailsTest extends TestCase
     public function test_set_get_quantity_min(): void
     {
         $node = new ArticleOrderDetails();
-        $value = rand(10, 1000);
+        $value = random_int(10, 1000);
 
         static::assertNull($node->getQuantityMin());
         $node->setQuantityMin($value);
@@ -70,7 +70,7 @@ class ArticleOrderDetailsTest extends TestCase
     public function test_set_get_quantity_interval(): void
     {
         $node = new ArticleOrderDetails();
-        $value = rand(10, 1000);
+        $value = random_int(10, 1000);
 
         static::assertNull($node->getQuantityInterval());
         $node->setQuantityInterval($value);

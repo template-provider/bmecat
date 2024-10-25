@@ -6,21 +6,15 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("CLASSIFICATION_SYSTEM_LEVEL_NAME")
- */
+#[Serializer\XmlRoot('CLASSIFICATION_SYSTEM_LEVEL_NAME')]
 class ClassificationSystemLevelName extends AbstractNode
 {
-    /**
-     * @Serializer\Type("int")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Type('int')]
+    #[Serializer\XmlAttribute]
     protected int $level = 1;
 
-    /**
-     * @Serializer\XmlValue
-     * @Serializer\Type("string")
-     */
+    #[Serializer\XmlValue]
+    #[Serializer\Type('string')]
     protected string $value = '';
 
     public function getLevel(): int

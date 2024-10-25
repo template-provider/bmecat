@@ -6,44 +6,32 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("HEADER")
- */
+#[Serializer\XmlRoot('HEADER')]
 class Header extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GENERATOR_INFO")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GENERATOR_INFO')]
     protected ?string $generatorInfo = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Catalog")
-     * @Serializer\SerializedName("CATALOG")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Catalog::class)]
+    #[Serializer\SerializedName('CATALOG')]
     protected Catalog $catalog;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Supplier")
-     * @Serializer\SerializedName("SUPPLIER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Supplier::class)]
+    #[Serializer\SerializedName('SUPPLIER')]
     protected Supplier $supplier;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Buyer")
-     * @Serializer\SerializedName("BUYER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Buyer::class)]
+    #[Serializer\SerializedName('BUYER')]
     protected ?Buyer $buyer = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Agreement>")
-     * @Serializer\SerializedName("AGREEMENT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Agreement>')]
+    #[Serializer\SerializedName('AGREEMENT')]
     protected ?array $agreements = null;
 
     public function getBuyer(): ?Buyer
@@ -66,7 +54,7 @@ class Header extends AbstractNode
         $this->agreements = $agreements;
     }
 
-    public function setGeneratorInfo(string $generatorInfo)
+    public function setGeneratorInfo(string $generatorInfo): void
     {
         $this->generatorInfo = $generatorInfo;
     }
@@ -76,7 +64,7 @@ class Header extends AbstractNode
         return $this->generatorInfo;
     }
 
-    public function setCatalog(Catalog $catalog)
+    public function setCatalog(Catalog $catalog): void
     {
         $this->catalog = $catalog;
     }
@@ -86,7 +74,7 @@ class Header extends AbstractNode
         return $this->catalog;
     }
 
-    public function setSupplier(Supplier $supplier)
+    public function setSupplier(Supplier $supplier): void
     {
         $this->supplier = $supplier;
     }

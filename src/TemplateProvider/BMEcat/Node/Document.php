@@ -6,54 +6,40 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("BMECAT")
- * @Serializer\ExclusionPolicy("all")
- */
+#[Serializer\XmlRoot('BMECAT')]
+#[Serializer\ExclusionPolicy('all')]
 class Document extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\XmlAttribute]
     protected string $version = '1.2';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("xmlns")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('xmlns')]
+    #[Serializer\XmlAttribute]
     protected string $namespace = 'http://www.bmecat.org/bmecat/1.2/bmecat_new_catalog';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("xmlns:xsi")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('xmlns:xsi')]
+    #[Serializer\XmlAttribute]
     protected string $nullableNamespace = 'http://www.w3.org/2001/XMLSchema-instance';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("xsi:noNamespaceSchemaLocation")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('xsi:noNamespaceSchemaLocation')]
+    #[Serializer\XmlAttribute]
     protected string $nullableLocation = 'http://www.w3.org/1999/xhtml.xsd';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Header")
-     * @Serializer\SerializedName("HEADER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Header::class)]
+    #[Serializer\SerializedName('HEADER')]
     protected Header $header;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\NewCatalog")
-     * @Serializer\SerializedName("T_NEW_CATALOG")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\NewCatalog::class)]
+    #[Serializer\SerializedName('T_NEW_CATALOG')]
     protected NewCatalog $catalog;
 
-    public function setVersion(string $version)
+    public function setVersion(string $version): void
     {
         $this->version = $version;
     }

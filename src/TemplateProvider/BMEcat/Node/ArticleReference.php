@@ -6,42 +6,30 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE_REFERENCE")
- */
+#[Serializer\XmlRoot('ARTICLE_REFERENCE')]
 class ArticleReference extends AbstractNode
 {
-    /**
-     * @Serializer\Type("string")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Type('string')]
+    #[Serializer\XmlAttribute]
     protected string $type = 'others';
 
-    /**
-     * @Serializer\Type("int")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Type('int')]
+    #[Serializer\XmlAttribute]
     protected ?int $quantity = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ART_ID_TO")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ART_ID_TO')]
     protected string $artIdTo = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_ID')]
     protected ?string $catalogId = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_VERSION")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_VERSION')]
     protected ?string $catalogVersion = null;
 
     public function getType(): string

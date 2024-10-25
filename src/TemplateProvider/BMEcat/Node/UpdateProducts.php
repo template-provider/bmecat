@@ -6,35 +6,31 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("PRICE_FLAG")
- */
+#[Serializer\XmlRoot('PRICE_FLAG')]
 class UpdateProducts extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("prev_version")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('prev_version')]
+    #[Serializer\XmlAttribute]
     protected int $type = 0;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Article>")
-     * @Serializer\XmlList(inline = true, entry = "ARTICLE")
      *
      * @var \TemplateProvider\BMEcat\Node\NewCatalogArticle[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Article>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE')]
     protected ?array $articles = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap>")
-     * @Serializer\XmlList(inline = true, entry = "ARTICLE_TO_CATALOG_GROUP_SYSTEMS")
      *
      * @var \TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE_TO_CATALOG_GROUP_SYSTEMS')]
     protected ?array $articleToCatalogGroups = null;
 
     public function getType(): int

@@ -6,39 +6,31 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("CATALOG_GROUP_SYSTEM")
- */
+#[Serializer\XmlRoot('CATALOG_GROUP_SYSTEM')]
 class CatalogGroupSystem extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GROUP_SYSTEM_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GROUP_SYSTEM_ID')]
     protected ?string $groupSystemId = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_SYSTEM_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_SYSTEM_NAME')]
     protected ?string $catalogSystemName = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\CatalogStructure>")
-     * @Serializer\XmlList(inline = true, entry = "CATALOG_STRUCTURE")
      *
      * @var \TemplateProvider\BMEcat\Node\CatalogStructure[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\CatalogStructure>')]
+    #[Serializer\XmlList(inline: true, entry: 'CATALOG_STRUCTURE')]
     protected array $catalogStructures = [];
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CATALOG_SYSTEM_DESCRIPTION")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CATALOG_SYSTEM_DESCRIPTION')]
     protected ?string $catalogSystemDescription = null;
 
     public function getGroupSystemId(): ?string

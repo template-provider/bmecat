@@ -22,7 +22,7 @@ class NodeBuilder
             $setterName = 'set' . ucfirst(str_replace(' ', '', ucwords(str_replace('_', ' ', $name))));
 
             if (!method_exists($instance, $setterName)) {
-                throw new UnknownKeyException('There is no setter for the property ' . $name . ' in the class ' . get_class($instance));
+                throw new UnknownKeyException('There is no setter for the property ' . $name . ' in the class ' . $instance::class);
             }
 
             if (is_scalar($value) || is_object($value)) {
@@ -37,18 +37,18 @@ class NodeBuilder
                 $reflectionMethod = new ReflectionMethod($instance, $setterName);
                 $setterParams = $reflectionMethod->getParameters();
                 // @codeCoverageIgnoreStart
-            } catch (ReflectionException $e) {
-                throw new InvalidSetterException('Reflecting the setter method ' . get_class($instance) . '::' . $setterName . ' failed.');
+            } catch (ReflectionException) {
+                throw new InvalidSetterException('Reflecting the setter method ' . $instance::class . '::' . $setterName . ' failed.');
             }
             /** @codeCoverageIgnoreEnd */
             $firstSetterParam = array_shift($setterParams);
 
             if (!$firstSetterParam) {
-                throw new InvalidSetterException('The setter for the property ' . $name . ' in the class ' . get_class($instance) . ' must have exactly one argument.');
+                throw new InvalidSetterException('The setter for the property ' . $name . ' in the class ' . $instance::class . ' must have exactly one argument.');
             }
 
             if (!$firstSetterParam->getType()) {
-                throw new InvalidSetterException('The setter for the property ' . $name . ' in the class ' . get_class($instance) . ' must have exactly one argument and this argument must have a type hint.');
+                throw new InvalidSetterException('The setter for the property ' . $name . ' in the class ' . $instance::class . ' must have exactly one argument and this argument must have a type hint.');
             }
 
             $paramType = $firstSetterParam->getType()->getName();

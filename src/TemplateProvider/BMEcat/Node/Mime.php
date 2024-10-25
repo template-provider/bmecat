@@ -6,55 +6,41 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("MIME")
- * @JMS\Serializer\Annotation\ExclusionPolicy("all")
- */
+#[Serializer\XmlRoot('MIME')]
+#[JMS\Serializer\Annotation\ExclusionPolicy('all')]
 class Mime extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_TYPE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_TYPE')]
     protected ?string $type = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_SOURCE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_SOURCE')]
     protected string $source = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SkipWhenEmpty
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_DESCR")
-     */
+    #[Serializer\Expose]
+    #[Serializer\SkipWhenEmpty]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_DESCR')]
     protected ?string $description = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SkipWhenEmpty
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_ALT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\SkipWhenEmpty]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_ALT')]
     protected ?string $alternateDescription = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_PURPOSE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_PURPOSE')]
     protected ?string $purpose = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\SkipWhenEmpty
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MIME_ORDER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\SkipWhenEmpty]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MIME_ORDER')]
     protected ?string $order = null;
 
     public function getType(): ?string
@@ -62,7 +48,7 @@ class Mime extends AbstractNode
         return $this->type;
     }
 
-    public function setType(string $type)
+    public function setType(string $type): void
     {
         $this->type = $type;
     }
@@ -72,7 +58,7 @@ class Mime extends AbstractNode
         return $this->source;
     }
 
-    public function setSource(string $source)
+    public function setSource(string $source): void
     {
         $this->source = $source;
     }
@@ -82,7 +68,7 @@ class Mime extends AbstractNode
         return $this->purpose;
     }
 
-    public function setPurpose(string $purpose)
+    public function setPurpose(string $purpose): void
     {
         $this->purpose = $purpose;
     }

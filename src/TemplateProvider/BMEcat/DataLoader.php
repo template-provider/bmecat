@@ -15,7 +15,7 @@ class DataLoader
     /**
      * @throws UnknownKeyException
      */
-    public static function load(array $data, DocumentBuilder $builder)
+    public static function load(array $data, DocumentBuilder $builder): void
     {
         if (true === isset($data['loader'])) {
             foreach ($data['loader'] as $nodeName => $class) {
@@ -53,7 +53,7 @@ class DataLoader
     /**
      * @throws UnknownKeyException
      */
-    public static function loadDocument(array $data, Document $document)
+    public static function loadDocument(array $data, Document $document): void
     {
         foreach ($data as $key => $value) {
             switch (strtolower($key)) {
@@ -78,7 +78,7 @@ class DataLoader
     /**
      * @throws UnknownKeyException
      */
-    public static function loadHeader(array $data, Header $header)
+    public static function loadHeader(array $data, Header $header): void
     {
         foreach ($data as $key => $value) {
             switch (strtolower($key)) {
@@ -110,36 +110,25 @@ class DataLoader
     /**
      * @throws UnknownKeyException
      */
-    public static function loadCatalog(array $data, Catalog $catalog)
+    public static function loadCatalog(array $data, Catalog $catalog): void
     {
         foreach ($data as $key => $value) {
-            switch (strtolower($key)) {
-                case 'id':
-                case 'version':
-                case 'language':
-                    self::loadScalarData($key, $value, $catalog);
-
-                    break;
-
-                case 'datetime':
-                    self::loadArrayData($value, $catalog->getDateTime());
-
-                    break;
-
-                default:
-                    throw new UnknownKeyException(sprintf('Unknown key header.%s to load', $key));
-            }
+            match (strtolower($key)) {
+                'id', 'version', 'language' => self::loadScalarData($key, $value, $catalog),
+                'datetime' => self::loadArrayData($value, $catalog->getDateTime()),
+                default => throw new UnknownKeyException(sprintf('Unknown key header.%s to load', $key)),
+            };
         }
     }
 
-    public static function loadArrayData(array $data, AbstractNode $node)
+    public static function loadArrayData(array $data, AbstractNode $node): void
     {
         foreach ($data as $key => $value) {
             self::loadScalarData($key, $value, $node);
         }
     }
 
-    public static function loadScalarData(string $key, $value, AbstractNode $node)
+    public static function loadScalarData(string $key, $value, AbstractNode $node): void
     {
         $method = 'set' . self::formatAttribute($key);
         $node->{$method}($value);
@@ -148,9 +137,7 @@ class DataLoader
     public static function formatAttribute(string $attribute): string
     {
         return \preg_replace_callback(
-            '/(^|_|\.)+(.)/', function ($match) {
-                return ('.' === $match[1] ? '_' : '') . strtoupper($match[2]);
-            }, $attribute
+            '/(^|_|\.)+(.)/', fn($match): string => ('.' === $match[1] ? '_' : '') . strtoupper($match[2]), $attribute
         );
     }
 }

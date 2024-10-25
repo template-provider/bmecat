@@ -6,32 +6,26 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("FEATURE_SYSTEM")
- */
+#[Serializer\XmlRoot('FEATURE_SYSTEM')]
 class FeatureSystem extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FEATURE_SYSTEM_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FEATURE_SYSTEM_NAME')]
     protected string $featureSystemName = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FEATURE_SYSTEM_DESCR")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FEATURE_SYSTEM_DESCR')]
     protected ?string $featureSystemDescription = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\FeatureGroup>")
-     * @Serializer\SerializedName("FEATURE_GROUP")
      *
      * @var \TemplateProvider\BMEcat\Node\FeatureGroup[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureGroup>')]
+    #[Serializer\SerializedName('FEATURE_GROUP')]
     protected array $featureGroup = [];
 
     public function getFeatureSystemName(): string

@@ -6,41 +6,31 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("DATETIME")
- */
+#[Serializer\XmlRoot('DATETIME')]
 class DateTime extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("type")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('type')]
+    #[Serializer\XmlAttribute]
     protected string $type = "generation_date";
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("DATE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('DATE')]
     protected string $date = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("TIME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('TIME')]
     protected ?string $time = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("TIMEZONE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('TIMEZONE')]
     protected ?string $timezone = null;
 
-    public function setDate(string $date)
+    public function setDate(string $date): void
     {
         $this->date = $date;
     }
@@ -50,7 +40,7 @@ class DateTime extends AbstractNode
         return $this->date;
     }
 
-    public function setTime(?string $time)
+    public function setTime(?string $time): void
     {
         $this->time = $time;
     }
@@ -60,7 +50,7 @@ class DateTime extends AbstractNode
         return $this->time;
     }
 
-    public function setTimezone(?string $timezone)
+    public function setTimezone(?string $timezone): void
     {
         $this->timezone = $timezone;
     }

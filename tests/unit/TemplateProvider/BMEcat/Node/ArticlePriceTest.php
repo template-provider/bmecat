@@ -21,7 +21,7 @@ class ArticlePriceTest extends TestCase
     public function test_set_get_price(): void
     {
         $node = new ArticlePrice();
-        $value = (float) rand(10, 1000);
+        $value = (float) random_int(10, 1000);
 
         static::assertNull($node->getPrice());
         $node->setPrice($value);

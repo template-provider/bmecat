@@ -6,55 +6,41 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE_ORDER_DETAILS")
- */
+#[Serializer\XmlRoot('ARTICLE_ORDER_DETAILS')]
 class ArticleOrderDetails extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ORDER_UNIT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ORDER_UNIT')]
     protected string $orderUnit = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("CONTENT_UNIT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('CONTENT_UNIT')]
     protected ?string $contentUnit = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("NO_CU_PER_OU")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('NO_CU_PER_OU')]
+    #[Serializer\XmlElement(cdata: false)]
     protected ?float $noCuPerOu  = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("PRICE_QUANTITY")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('PRICE_QUANTITY')]
+    #[Serializer\XmlElement(cdata: false)]
     protected ?float $priceQuantity = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("QUANTITY_MIN")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('QUANTITY_MIN')]
+    #[Serializer\XmlElement(cdata: false)]
     protected ?int $quantityMin = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("QUANTITY_INTERVAL")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('QUANTITY_INTERVAL')]
+    #[Serializer\XmlElement(cdata: false)]
     protected ?int $quantityInterval = null;
 
     public function getOrderUnit(): string

@@ -6,16 +6,12 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("CLASSIFICATION_GROUPS")
- */
+#[Serializer\XmlRoot('CLASSIFICATION_GROUPS')]
 class ClassificationGroups extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\ClassificationGroup")
-     * @Serializer\SerializedName("CLASSIFICATION_GROUP")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationGroup::class)]
+    #[Serializer\SerializedName('CLASSIFICATION_GROUP')]
     protected array $classificationGroups = [];
 
     public function getClassificationGroups(): array

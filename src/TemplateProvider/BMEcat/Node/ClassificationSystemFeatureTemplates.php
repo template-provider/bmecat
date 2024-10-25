@@ -6,16 +6,12 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("CLASSIFICATION_SYSTEM_FEATURE_TEMPLATES")
- */
+#[Serializer\XmlRoot('CLASSIFICATION_SYSTEM_FEATURE_TEMPLATES')]
 class ClassificationSystemFeatureTemplates extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\ClassificationSystemFeatureTemplate")
-     * @Serializer\SerializedName("CLASSIFICATION_SYSTEM_FEATURE_TEMPLATE")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationSystemFeatureTemplate::class)]
+    #[Serializer\SerializedName('CLASSIFICATION_SYSTEM_FEATURE_TEMPLATE')]
     protected array $featureTemplates = [];
 
     public function getFeatureTemplates(): array

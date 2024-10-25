@@ -6,54 +6,52 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("T_NEW_CATALOG")
- */
+#[Serializer\XmlRoot('T_NEW_CATALOG')]
 class NewCatalog extends AbstractNode
 {
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\FeatureSystem>")
-     * @Serializer\XmlList(inline = true, entry = "FEATURE_SYSTEM")
      *
      * @var \TemplateProvider\BMEcat\Node\FeatureSystem[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureSystem>')]
+    #[Serializer\XmlList(inline: true, entry: 'FEATURE_SYSTEM')]
     protected ?array $featuresSystems = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ClassificationSystem>")
-     * @Serializer\XmlList(inline = true, entry = "CLASSIFICATION_SYSTEM")
      *
      * @var \TemplateProvider\BMEcat\Node\ClassificationSystem[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ClassificationSystem>')]
+    #[Serializer\XmlList(inline: true, entry: 'CLASSIFICATION_SYSTEM')]
     protected ?array $classificationSystems = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\NewCatalogArticle>")
-     * @Serializer\XmlList(inline = true, entry = "ARTICLE")
      *
      * @var null|\TemplateProvider\BMEcat\Node\NewCatalogArticle[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\NewCatalogArticle>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE')]
     protected ?array $articles = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\CatalogGroupSystem>")
-     * @Serializer\XmlList(inline = true, entry = "CATALOG_GROUP_SYSTEM")
      *
      * @var \TemplateProvider\BMEcat\Node\CatalogGroupSystem[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\CatalogGroupSystem>')]
+    #[Serializer\XmlList(inline: true, entry: 'CATALOG_GROUP_SYSTEM')]
     protected ?array $catalogGroupSystems = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap>")
-     * @Serializer\XmlList(inline = true, entry = "ARTICLE_TO_CATALOGGROUP_MAP")
      *
      * @var \TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE_TO_CATALOGGROUP_MAP')]
     protected ?array $articleToCatalogGroups = null;
 
     public function getFeaturesSystems(): ?array

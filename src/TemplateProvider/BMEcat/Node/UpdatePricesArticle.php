@@ -6,26 +6,22 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE")
- */
+#[Serializer\XmlRoot('ARTICLE')]
 class UpdatePricesArticle extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("SUPPLIER_AID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('SUPPLIER_AID')]
     protected string $id;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("ARTICLE_PRICE_DETAILS")
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticlePrice>")
-     * @Serializer\XmlList( entry="ARTICLE_PRICE")
      *
      * @var \TemplateProvider\BMEcat\Node\ArticlePrice[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('ARTICLE_PRICE_DETAILS')]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticlePrice>')]
+    #[Serializer\XmlList(entry: 'ARTICLE_PRICE')]
     protected array $prices = [];
 
     public function getId(): string

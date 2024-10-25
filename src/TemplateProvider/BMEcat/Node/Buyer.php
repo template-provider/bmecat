@@ -6,30 +6,22 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("BUYER")
- */
+#[Serializer\XmlRoot('BUYER')]
 class Buyer extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\BuyerId")
-     * @Serializer\SerializedName("BUYER_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\BuyerId::class)]
+    #[Serializer\SerializedName('BUYER_ID')]
     protected ?\TemplateProvider\BMEcat\Node\BuyerId $id = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("BUYER_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('BUYER_NAME')]
     protected string $name = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Address")
-     * @Serializer\SerializedName("ADDRESS")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Address::class)]
+    #[Serializer\SerializedName('ADDRESS')]
     protected ?Address $address = null;
 
     public function getId(): ?BuyerId

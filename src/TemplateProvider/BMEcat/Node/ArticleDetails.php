@@ -6,138 +6,110 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("ARTICLE_DETAILS")
- */
+#[Serializer\XmlRoot('ARTICLE_DETAILS')]
 class ArticleDetails extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("DESCRIPTION_SHORT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('DESCRIPTION_SHORT')]
     protected string $descriptionShort;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("DESCRIPTION_LONG")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('DESCRIPTION_LONG')]
     protected ?string $descriptionLong = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("EAN")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('EAN')]
     protected ?string $ean = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("SUPPLIER_ALT_AID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('SUPPLIER_ALT_AID')]
     protected ?string $supplierAltAid = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\BuyerAid>")
-     * @Serializer\XmlList(inline=true, entry="BUYER_AID")
      *
      * @var BuyerAid[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\BuyerAid>')]
+    #[Serializer\XmlList(inline: true, entry: 'BUYER_AID')]
     protected ?array $buyerAids = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MANUFACTURER_AID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MANUFACTURER_AID')]
     protected ?string $manufacturerAid = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MANUFACTURER_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MANUFACTURER_NAME')]
     protected ?string $manufacturerName = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("MANUFACTURER_TYPE_DESCR")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('MANUFACTURER_TYPE_DESCR')]
     protected ?string $manufacturerTypeDescription = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ERP_GROUP_BUYER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ERP_GROUP_BUYER')]
     protected ?string $erpGroupBuyer = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("ERP_GROUP_SUPPLIER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('ERP_GROUP_SUPPLIER')]
     protected ?string $erpGroupSupplier = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("float")
-     * @Serializer\SerializedName("DELIVERY_TIME")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('float')]
+    #[Serializer\SerializedName('DELIVERY_TIME')]
+    #[Serializer\XmlElement(cdata: false)]
     protected ?float $deliveryTime = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\SpecialTreatmentClass>")
-     * @Serializer\XmlList(inline=true, entry="SPECIAL_TREATMENT_CLASS")
      *
      * @var SpecialTreatmentClass[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\SpecialTreatmentClass>')]
+    #[Serializer\XmlList(inline: true, entry: 'SPECIAL_TREATMENT_CLASS')]
     protected ?array $specialTreatmentClasses = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Keyword>")
-     * @Serializer\XmlList(inline=true, entry="KEYWORD")
      *
      * @var Keyword[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Keyword>')]
+    #[Serializer\XmlList(inline: true, entry: 'KEYWORD')]
     protected ?array $keywords = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("REMARKS")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('REMARKS')]
     protected ?string $remarks = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("SEGMENT")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('SEGMENT')]
     protected ?string $segment = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("int")
-     * @Serializer\SerializedName("ARTICLE_ORDER")
-     * @Serializer\XmlElement(cdata=false)
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('int')]
+    #[Serializer\SerializedName('ARTICLE_ORDER')]
+    #[Serializer\XmlElement(cdata: false)]
     protected ?int $articleOrder = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\ArticleStatus>")
-     * @Serializer\XmlList(inline=true, entry="ARTICLE_STATUS")
      *
      * @var ArticleStatus[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleStatus>')]
+    #[Serializer\XmlList(inline: true, entry: 'ARTICLE_STATUS')]
     protected ?array $articleStatus = null;
 
     public function getDescriptionShort(): string

@@ -6,40 +6,32 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("SUPPLIER")
- */
+#[Serializer\XmlRoot('SUPPLIER')]
 class Supplier extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("SUPPLIER_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('SUPPLIER_ID')]
     protected ?string $id = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("SUPPLIER_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('SUPPLIER_NAME')]
     protected string $name = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\Address")
-     * @Serializer\SerializedName("ADDRESS")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Address::class)]
+    #[Serializer\SerializedName('ADDRESS')]
     protected ?Address $address = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("MIME_INFO")
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Mime>")
-     * @Serializer\XmlList( entry="MIME")
      *
      * @var \TemplateProvider\BMEcat\Node\Mime[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('MIME_INFO')]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Mime>')]
+    #[Serializer\XmlList(entry: 'MIME')]
     protected ?array $mimes = null;
 
     public function getId(): ?string

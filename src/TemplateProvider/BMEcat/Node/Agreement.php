@@ -6,30 +6,22 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("AGREEMENT")
- */
+#[Serializer\XmlRoot('AGREEMENT')]
 class Agreement extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("AGREEMENT_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('AGREEMENT_ID')]
     protected string $id = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\DateTime")
-     * @Serializer\SerializedName("DATETIME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\SerializedName('DATETIME')]
     protected ?\TemplateProvider\BMEcat\Node\DateTime $dateTimeStart = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("TemplateProvider\BMEcat\Node\DateTime")
-     * @Serializer\SerializedName("DATETIME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\SerializedName('DATETIME')]
     protected ?\TemplateProvider\BMEcat\Node\DateTime $dateTimeEnd = null;
 
     public function getId(): string

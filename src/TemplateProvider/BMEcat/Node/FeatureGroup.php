@@ -6,39 +6,31 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("FEATURE_GROUP")
- */
+#[Serializer\XmlRoot('FEATURE_GROUP')]
 class FeatureGroup extends AbstractNode
 {
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FEATURE_GROUP_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FEATURE_GROUP_ID')]
     protected string $featureGroupId = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FEATURE_GROUP_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FEATURE_GROUP_NAME')]
     protected string $featureGroupName = '';
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\FeatureTemplate>")
-     * @Serializer\SerializedName("FEATURE_TEMPLATE")
      *
      * @var \TemplateProvider\BMEcat\Node\FeatureTemplate[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureTemplate>')]
+    #[Serializer\SerializedName('FEATURE_TEMPLATE')]
     protected ?array $featureTemplates = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("FEATURE_GROUP_DESCR")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('FEATURE_GROUP_DESCR')]
     protected ?string $featureGroupDescription = null;
 
     public function getFeatureGroupId(): string

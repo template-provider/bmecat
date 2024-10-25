@@ -6,69 +6,55 @@ namespace TemplateProvider\BMEcat\Node;
 
 use JMS\Serializer\Annotation as Serializer;
 
-/**
- * @Serializer\XmlRoot("CATALOG_STRUCTURE")
- */
+#[Serializer\XmlRoot('CATALOG_STRUCTURE')]
 class CatalogStructure extends AbstractNode
 {
-    /**
-     * @Serializer\Type("string")
-     * @Serializer\XmlAttribute
-     */
+    #[Serializer\Type('string')]
+    #[Serializer\XmlAttribute]
     protected string $type = 'root';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GROUP_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GROUP_ID')]
     protected string $groupId = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GROUP_NAME")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GROUP_NAME')]
     protected string $groupName = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GROUP_DESCRIPTION")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GROUP_DESCRIPTION')]
     protected ?string $groupDescription = null;
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("PARENT_ID")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('PARENT_ID')]
     protected string $parentId = '';
 
-    /**
-     * @Serializer\Expose
-     * @Serializer\Type("string")
-     * @Serializer\SerializedName("GROUP_ORDER")
-     */
+    #[Serializer\Expose]
+    #[Serializer\Type('string')]
+    #[Serializer\SerializedName('GROUP_ORDER')]
     protected ?string $groupOrder = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\SerializedName("MIME_INFO")
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Mime>")
-     * @Serializer\XmlList( entry="MIME")
      *
      * @var null|\TemplateProvider\BMEcat\Node\Mime[]
      */
+    #[Serializer\Expose]
+    #[Serializer\SerializedName('MIME_INFO')]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Mime>')]
+    #[Serializer\XmlList(entry: 'MIME')]
     protected ?array $mimes = null;
 
     /**
-     * @Serializer\Expose
-     * @Serializer\Type("array<TemplateProvider\BMEcat\Node\Keyword>")
-     * @Serializer\XmlList(inline=true, entry="KEYWORD")
      *
      * @var \TemplateProvider\BMEcat\Node\Keyword[]
      */
+    #[Serializer\Expose]
+    #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Keyword>')]
+    #[Serializer\XmlList(inline: true, entry: 'KEYWORD')]
     protected ?array $keywords = null;
 
     public function getType(): string
