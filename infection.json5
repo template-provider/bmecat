@@ -1,0 +1,25 @@
+{
+    "source": {
+        "directories": [
+            "src"
+        ],
+    },
+    "phpUnit": {
+        "customPath": "vendor/bin/phpunit"
+    },
+    "tmpDir": "build/infection/infection-cache",
+    "timeout": 10,
+    "logs": {
+        "text": "build/infection/infection.log",
+        "summary": "build/infection/summary.log",
+        "json": "build/infection/infection-log.json",
+        "perMutator": "build/infection/per-mutator.md",
+        "github": false
+    },
+    "mutators": {
+        "@default": true,
+    },
+    "testFramework":"phpunit",
+    "initialTestsPhpOptions": "-d xdebug.mode=coverage",
+    "testFrameworkOptions": ""
+}

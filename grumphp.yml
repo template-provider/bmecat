@@ -1,0 +1,15 @@
+grumphp:
+    environment:
+        variables:
+          XDEBUG: 'coverage'
+    tasks:
+        phpunit:
+            always_execute: true
+        phpcs:
+        composer:
+        phpcsfixer:
+            config: .php-cs-fixer.dist.php
+        phpversion:
+          project: '8.3'
+        phpstan:
+        rector:
