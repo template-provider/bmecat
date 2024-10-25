@@ -7,7 +7,7 @@ namespace TemplateProvider\BMEcat\Node;
 use JMS\Serializer\Annotation as Serializer;
 
 #[Serializer\XmlRoot('MIME')]
-#[JMS\Serializer\Annotation\ExclusionPolicy('all')]
+#[Serializer\ExclusionPolicy('all')]
 class Mime extends AbstractNode
 {
     #[Serializer\Expose]

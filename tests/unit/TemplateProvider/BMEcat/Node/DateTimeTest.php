@@ -45,8 +45,8 @@ final class DateTimeTest extends TestCase
         $node = new DateTime();
         $value = '-01:00';
 
-        $node->setTimeZone($value);
-        self::assertSame($value, $node->getTimeZone());
+        $node->setTimezone($value);
+        self::assertSame($value, $node->getTimezone());
     }
 
     public function test_serialize_with_null_values(): void

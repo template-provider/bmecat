@@ -21,11 +21,17 @@ class Variants extends AbstractNode
     #[Serializer\XmlElement(cdata: false)]
     protected int $articleOrder = 0;
 
+    /**
+     * @return array<Variant>
+     */
     public function getVariants(): array
     {
         return $this->variants;
     }
 
+    /**
+     * @param array<Variant> $variants
+     */
     public function setVariants(array $variants): void
     {
         $this->variants = $variants;

@@ -18,7 +18,7 @@ class DocumentBuilder
 
     protected ?SerializationContext $context;
 
-    protected NodeInterface $document;
+    protected ?NodeInterface $document = null;
 
     public function __construct(?Serializer $serializer = null, ?SerializationContext $context = null)
     {
@@ -58,7 +58,7 @@ class DocumentBuilder
         return $this;
     }
 
-    public function getDocument(): NodeInterface
+    public function getDocument(): ?NodeInterface
     {
         return $this->document;
     }
@@ -78,7 +78,7 @@ class DocumentBuilder
     private function getExpressionLanguage(): ExpressionLanguage
     {
         $expressionLanguage = new ExpressionLanguage();
-        $expressionLanguage->register('empty', static fn ($str) => $str, static fn ($arguments, $str): bool => empty($str));
+        $expressionLanguage->register('empty', static fn ($str) => $str, static fn ($arguments, $str): bool => empty($str)); // @phpstan-ignore-line
 
         return $expressionLanguage;
     }

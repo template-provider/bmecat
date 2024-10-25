@@ -26,7 +26,7 @@ class NodeBuilder
             }
 
             if (\is_scalar($value) || \is_object($value)) {
-                $instance->{$setterName}($value);
+                $instance->{$setterName}($value); // @phpstan-ignore-line
 
                 continue;
             }
@@ -43,22 +43,22 @@ class NodeBuilder
             /** @codeCoverageIgnoreEnd */
             $firstSetterParam = array_shift($setterParams);
 
-            if (!$firstSetterParam) {
+            if (null === $firstSetterParam) {
                 throw new InvalidSetterException('The setter for the property ' . $name . ' in the class ' . $instance::class . ' must have exactly one argument.');
             }
 
-            if (!$firstSetterParam->getType()) {
+            if (null === $firstSetterParam->getType()) {
                 throw new InvalidSetterException('The setter for the property ' . $name . ' in the class ' . $instance::class . ' must have exactly one argument and this argument must have a type hint.');
             }
 
-            $paramType = $firstSetterParam->getType()->getName();
+            $paramType = $firstSetterParam->getType()->getName(); /** @phpstan-ignore-line */
             $valueType = \gettype($value);
 
             if ($paramType !== $valueType && class_exists($paramType)) {
                 $value = self::fromArray($value, new $paramType());
             }
 
-            $instance->{$setterName}($value);
+            $instance->{$setterName}($value); // @phpstan-ignore-line
         }
 
         return $instance;

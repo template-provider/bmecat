@@ -27,12 +27,12 @@ class ClassificationGroup extends AbstractNode
     #[Serializer\Expose]
     #[Serializer\Type('TemplateProvider\BMEcat\Node\ClassificationGroupsSynonyms')]
     #[Serializer\SerializedName('CLASSIFICATION_GROUP_SYNONYMS')]
-    protected ?ClassificationGroupsSynonymsNode $classificationGroupsSynonyms = null;
+    protected ?ClassificationGroupSynonyms $classificationGroupsSynonyms = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('TemplateProvider\BMEcat\Node\ClassificationGroupsFeatureTemplates')]
     #[Serializer\SerializedName('CLASSIFICATION_GROUP_FEATURE_TEMPLATES')]
-    protected ?ClassificationGroupsFeatureTemplatesNode $classificationGroupsFeatureTemplates = null;
+    protected ?ClassificationGroupFeatureTemplates $classificationGroupsFeatureTemplates = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
@@ -69,22 +69,22 @@ class ClassificationGroup extends AbstractNode
         $this->description = $description;
     }
 
-    public function getClassificationGroupsSynonyms(): ?ClassificationGroupsSynonymsNode
+    public function getClassificationGroupsSynonyms(): ?ClassificationGroupSynonyms
     {
         return $this->classificationGroupsSynonyms;
     }
 
-    public function setClassificationGroupsSynonyms(?ClassificationGroupsSynonymsNode $classificationGroupsSynonyms): void
+    public function setClassificationGroupsSynonyms(?ClassificationGroupSynonyms $classificationGroupsSynonyms): void
     {
         $this->classificationGroupsSynonyms = $classificationGroupsSynonyms;
     }
 
-    public function getClassificationGroupsFeatureTemplates(): ?ClassificationGroupsFeatureTemplatesNode
+    public function getClassificationGroupsFeatureTemplates(): ?ClassificationGroupFeatureTemplates
     {
         return $this->classificationGroupsFeatureTemplates;
     }
 
-    public function setClassificationGroupsFeatureTemplates(?ClassificationGroupsFeatureTemplatesNode $classificationGroupsFeatureTemplates): void
+    public function setClassificationGroupsFeatureTemplates(?ClassificationGroupFeatureTemplates $classificationGroupsFeatureTemplates): void
     {
         $this->classificationGroupsFeatureTemplates = $classificationGroupsFeatureTemplates;
     }

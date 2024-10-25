@@ -35,8 +35,8 @@ final class ArticleFeatureTest extends TestCase
         $node = new ArticleFeature();
         $value = sha1(uniqid(microtime(false), true));
 
-        $node->setValue([$value]);
-        self::assertSame([$value], $node->getValue());
+        $node->setValue([$value]); // @phpstan-ignore-line
+        self::assertSame([$value], $node->getValue()); // @phpstan-ignore-line
     }
 
     public function test_serialize_with_null_values(): void
