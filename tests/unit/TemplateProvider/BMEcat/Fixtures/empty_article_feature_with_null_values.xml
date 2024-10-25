@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FEATURE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<FEATURE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true">
   <FNAME><![CDATA[]]></FNAME>
-  <VARIANTS><![CDATA[]]></VARIANTS>
-  <FVALUE/>
+  <VARIANTS xsi:nil="true"/>
   <FUNIT xsi:nil="true"/>
   <FORDER xsi:nil="true"/>
   <FDESCR xsi:nil="true"/>

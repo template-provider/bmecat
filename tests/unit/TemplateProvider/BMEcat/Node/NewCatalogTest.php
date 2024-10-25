@@ -77,12 +77,10 @@ class NewCatalogTest extends TestCase
             <T_NEW_CATALOG>
               <CATALOG_GROUP_SYSTEM>
                 <GROUP_SYSTEM_ID><![CDATA[bar]]></GROUP_SYSTEM_ID>
-                <CATALOG_STRUCTURE>
-                  <entry type="root">
-                    <GROUP_ID><![CDATA[foo]]></GROUP_ID>
-                    <GROUP_NAME><![CDATA[]]></GROUP_NAME>
-                    <PARENT_ID><![CDATA[]]></PARENT_ID>
-                  </entry>
+                <CATALOG_STRUCTURE type="root">
+                  <GROUP_ID><![CDATA[foo]]></GROUP_ID>
+                  <GROUP_NAME><![CDATA[]]></GROUP_NAME>
+                  <PARENT_ID><![CDATA[]]></PARENT_ID>
                 </CATALOG_STRUCTURE>
               </CATALOG_GROUP_SYSTEM>
             </T_NEW_CATALOG>

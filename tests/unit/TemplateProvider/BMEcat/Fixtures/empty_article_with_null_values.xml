@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ARTICLE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true">
-  <SUPPLIER_AID><![CDATA[foo]]></SUPPLIER_AID>
   <ARTICLE_DETAILS xsi:nil="true">
     <DESCRIPTION_SHORT><![CDATA[bar]]></DESCRIPTION_SHORT>
     <DESCRIPTION_LONG xsi:nil="true"/>
@@ -25,4 +24,5 @@
     <QUANTITY_INTERVAL xsi:nil="true"/>
   </ARTICLE_ORDER_DETAILS>
   <MIME_INFO xsi:nil="true"/>
+  <SUPPLIER_AID><![CDATA[foo]]></SUPPLIER_AID>
 </ARTICLE>
