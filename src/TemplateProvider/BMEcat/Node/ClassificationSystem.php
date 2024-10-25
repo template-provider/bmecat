@@ -35,27 +35,27 @@ class ClassificationSystem extends AbstractNode
     protected ?int $levels = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationSystemLevelNames::class)]
+    #[Serializer\Type(ClassificationSystemLevelNames::class)]
     #[Serializer\SerializedName('CLASSIFICATION_SYSTEM_LEVEL_NAMES')]
-    protected ?\TemplateProvider\BMEcat\Node\ClassificationSystemLevelNames $levelNames = null;
+    protected ?ClassificationSystemLevelNames $levelNames = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\AllowedValues::class)]
+    #[Serializer\Type(AllowedValues::class)]
     #[Serializer\SerializedName('ALLOWED_VALUES')]
-    protected ?\TemplateProvider\BMEcat\Node\AllowedValues $allowedValues = null;
+    protected ?AllowedValues $allowedValues = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Units::class)]
+    #[Serializer\Type(Units::class)]
     #[Serializer\SerializedName('UNITS')]
-    protected ?\TemplateProvider\BMEcat\Node\Units $units = null;
+    protected ?Units $units = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationSystemFeatureTemplates::class)]
+    #[Serializer\Type(ClassificationSystemFeatureTemplates::class)]
     #[Serializer\SerializedName('CLASSIFICATION_SYSTEM_FEATURE_TEMPLATES')]
-    protected ?\TemplateProvider\BMEcat\Node\ClassificationSystemFeatureTemplates $classificationSystemFeatureTemplates = null;
+    protected ?ClassificationSystemFeatureTemplates $classificationSystemFeatureTemplates = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationGroups::class)]
+    #[Serializer\Type(ClassificationGroups::class)]
     #[Serializer\SerializedName('CLASSIFICATION_GROUPS')]
-    protected ?\TemplateProvider\BMEcat\Node\ClassificationGroups $classificationGroups = null;
+    protected ?ClassificationGroups $classificationGroups = null;
 }

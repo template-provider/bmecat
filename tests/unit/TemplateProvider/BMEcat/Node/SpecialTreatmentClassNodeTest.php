@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class SpecialTreatmentClassNodeTest extends TestCase
+/**
+ * @internal
+ */
+final class SpecialTreatmentClassNodeTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -26,7 +29,7 @@ class SpecialTreatmentClassNodeTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_special_treatment_class_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -37,6 +40,6 @@ class SpecialTreatmentClassNodeTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_special_treatment_class_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

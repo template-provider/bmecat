@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class NewCatalogTest extends TestCase
+/**
+ * @internal
+ */
+final class NewCatalogTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -27,13 +30,13 @@ class NewCatalogTest extends TestCase
         ];
 
         $node = new NewCatalog();
-        static::assertNull($node->getArticles());
+        self::assertNull($node->getArticles());
 
         foreach ($articles as $article) {
             $node->addArticle($article);
         }
 
-        static::assertSame($articles, $node->getArticles());
+        self::assertSame($articles, $node->getArticles());
     }
 
     public function test_serialize_with_null_values(): void
@@ -44,7 +47,7 @@ class NewCatalogTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_new_catalog_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -55,7 +58,7 @@ class NewCatalogTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_new_catalog_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_with_catalog_structure(): void
@@ -87,6 +90,6 @@ class NewCatalogTest extends TestCase
 
             EXPECTED;
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

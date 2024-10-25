@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class BuyerAidTest extends TestCase
+/**
+ * @internal
+ */
+final class BuyerAidTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -26,7 +29,7 @@ class BuyerAidTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_buyer_aid_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -37,6 +40,6 @@ class BuyerAidTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_buyer_aid_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class ArticleDetailsTest extends TestCase
+/**
+ * @internal
+ */
+final class ArticleDetailsTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -27,14 +30,14 @@ class ArticleDetailsTest extends TestCase
         ];
 
         $node = new ArticleDetails();
-        static::assertEmpty($node->getBuyerAids());
-        static::assertNull($node->getBuyerAids());
+        self::assertEmpty($node->getBuyerAids());
+        self::assertNull($node->getBuyerAids());
 
         foreach ($buyerAids as $buyerAid) {
             $node->addBuyerAid($buyerAid);
         }
 
-        static::assertSame($buyerAids, $node->getBuyerAids());
+        self::assertSame($buyerAids, $node->getBuyerAids());
     }
 
     public function test_add_get_special_treatment_classes(): void
@@ -46,14 +49,14 @@ class ArticleDetailsTest extends TestCase
         ];
 
         $node = new ArticleDetails();
-        static::assertEmpty($node->getSpecialTreatmentClasses());
-        static::assertNull($node->getSpecialTreatmentClasses());
+        self::assertEmpty($node->getSpecialTreatmentClasses());
+        self::assertNull($node->getSpecialTreatmentClasses());
 
         foreach ($specialTreatmentClasses as $specialTreatmentClass) {
             $node->addSpecialTreatmentClass($specialTreatmentClass);
         }
 
-        static::assertSame($specialTreatmentClasses, $node->getSpecialTreatmentClasses());
+        self::assertSame($specialTreatmentClasses, $node->getSpecialTreatmentClasses());
     }
 
     public function test_add_get_keywords(): void
@@ -65,14 +68,14 @@ class ArticleDetailsTest extends TestCase
         ];
 
         $node = new ArticleDetails();
-        static::assertEmpty($node->getKeywords());
-        static::assertNull($node->getKeywords());
+        self::assertEmpty($node->getKeywords());
+        self::assertNull($node->getKeywords());
 
         foreach ($keywords as $keyword) {
             $node->addKeyword($keyword);
         }
 
-        static::assertSame($keywords, $node->getKeywords());
+        self::assertSame($keywords, $node->getKeywords());
     }
 
     public function test_add_get_article_status(): void
@@ -84,14 +87,14 @@ class ArticleDetailsTest extends TestCase
         ];
 
         $node = new ArticleDetails();
-        static::assertEmpty($node->getArticleStatus());
-        static::assertNull($node->getArticleStatus());
+        self::assertEmpty($node->getArticleStatus());
+        self::assertNull($node->getArticleStatus());
 
         foreach ($articleStatus as $singleArticleStatus) {
             $node->addArticleStatus($singleArticleStatus);
         }
 
-        static::assertSame($articleStatus, $node->getArticleStatus());
+        self::assertSame($articleStatus, $node->getArticleStatus());
     }
 
     public function test_set_get_description_long(): void
@@ -99,9 +102,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getDescriptionLong());
+        self::assertNull($node->getDescriptionLong());
         $node->setDescriptionLong($value);
-        static::assertSame($value, $node->getDescriptionLong());
+        self::assertSame($value, $node->getDescriptionLong());
     }
 
     public function test_set_get_description_short(): void
@@ -110,7 +113,7 @@ class ArticleDetailsTest extends TestCase
         $value = sha1(uniqid(microtime(false), true));
 
         $node->setDescriptionShort($value);
-        static::assertSame($value, $node->getDescriptionShort());
+        self::assertSame($value, $node->getDescriptionShort());
     }
 
     public function test_set_get_ean(): void
@@ -118,9 +121,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getEan());
+        self::assertNull($node->getEan());
         $node->setEan($value);
-        static::assertSame($value, $node->getEan());
+        self::assertSame($value, $node->getEan());
     }
 
     public function test_set_get_supplier_alt_aid(): void
@@ -128,9 +131,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getSupplierAltAid());
+        self::assertNull($node->getSupplierAltAid());
         $node->setSupplierAltAid($value);
-        static::assertSame($value, $node->getSupplierAltAid());
+        self::assertSame($value, $node->getSupplierAltAid());
     }
 
     public function test_set_get_manufacturer_name(): void
@@ -138,9 +141,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getManufacturerName());
+        self::assertNull($node->getManufacturerName());
         $node->setManufacturerName($value);
-        static::assertSame($value, $node->getManufacturerName());
+        self::assertSame($value, $node->getManufacturerName());
     }
 
     public function test_set_get_manufacturer_type_description(): void
@@ -148,9 +151,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getManufacturerTypeDescription());
+        self::assertNull($node->getManufacturerTypeDescription());
         $node->setManufacturerTypeDescription($value);
-        static::assertSame($value, $node->getManufacturerTypeDescription());
+        self::assertSame($value, $node->getManufacturerTypeDescription());
     }
 
     public function test_set_get_erp_group_buyer(): void
@@ -158,9 +161,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getErpGroupBuyer());
+        self::assertNull($node->getErpGroupBuyer());
         $node->setErpGroupBuyer($value);
-        static::assertSame($value, $node->getErpGroupBuyer());
+        self::assertSame($value, $node->getErpGroupBuyer());
     }
 
     public function test_set_get_erp_group_supplier(): void
@@ -168,9 +171,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getErpGroupSupplier());
+        self::assertNull($node->getErpGroupSupplier());
         $node->setErpGroupSupplier($value);
-        static::assertSame($value, $node->getErpGroupSupplier());
+        self::assertSame($value, $node->getErpGroupSupplier());
     }
 
     public function test_set_get_delivery_time(): void
@@ -178,9 +181,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = (float) random_int(10, 1000);
 
-        static::assertNull($node->getDeliveryTime());
+        self::assertNull($node->getDeliveryTime());
         $node->setDeliveryTime($value);
-        static::assertSame($value, $node->getDeliveryTime());
+        self::assertSame($value, $node->getDeliveryTime());
     }
 
     public function test_set_get_remarks(): void
@@ -188,9 +191,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getRemarks());
+        self::assertNull($node->getRemarks());
         $node->setRemarks($value);
-        static::assertSame($value, $node->getRemarks());
+        self::assertSame($value, $node->getRemarks());
     }
 
     public function test_set_get_article_order(): void
@@ -198,9 +201,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = random_int(10, 1000);
 
-        static::assertNull($node->getArticleOrder());
+        self::assertNull($node->getArticleOrder());
         $node->setArticleOrder($value);
-        static::assertSame($value, $node->getArticleOrder());
+        self::assertSame($value, $node->getArticleOrder());
     }
 
     public function test_set_get_description_segment(): void
@@ -208,9 +211,9 @@ class ArticleDetailsTest extends TestCase
         $node = new ArticleDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getSegment());
+        self::assertNull($node->getSegment());
         $node->setSegment($value);
-        static::assertSame($value, $node->getSegment());
+        self::assertSame($value, $node->getSegment());
     }
 
     public function test_serialize_with_null_values(): void
@@ -223,7 +226,7 @@ class ArticleDetailsTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_details_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -236,6 +239,6 @@ class ArticleDetailsTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_details_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

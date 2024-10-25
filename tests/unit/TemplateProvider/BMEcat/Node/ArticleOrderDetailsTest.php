@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class ArticleOrderDetailsTest extends TestCase
+/**
+ * @internal
+ */
+final class ArticleOrderDetailsTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -24,7 +27,7 @@ class ArticleOrderDetailsTest extends TestCase
         $value = sha1(uniqid(microtime(false), true));
 
         $node->setOrderUnit($value);
-        static::assertSame($value, $node->getOrderUnit());
+        self::assertSame($value, $node->getOrderUnit());
     }
 
     public function test_set_get_content_unit(): void
@@ -32,9 +35,9 @@ class ArticleOrderDetailsTest extends TestCase
         $node = new ArticleOrderDetails();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getContentUnit());
+        self::assertNull($node->getContentUnit());
         $node->setContentUnit($value);
-        static::assertSame($value, $node->getContentUnit());
+        self::assertSame($value, $node->getContentUnit());
     }
 
     public function test_set_get_no_cu_per_ou(): void
@@ -42,9 +45,9 @@ class ArticleOrderDetailsTest extends TestCase
         $node = new ArticleOrderDetails();
         $value = (float) random_int(10, 1000);
 
-        static::assertNull($node->getNoCuPerOu());
+        self::assertNull($node->getNoCuPerOu());
         $node->setNoCuPerOu($value);
-        static::assertSame($value, $node->getNoCuPerOu());
+        self::assertSame($value, $node->getNoCuPerOu());
     }
 
     public function test_set_get_price_quantity(): void
@@ -52,9 +55,9 @@ class ArticleOrderDetailsTest extends TestCase
         $node = new ArticleOrderDetails();
         $value = (float) random_int(10, 1000);
 
-        static::assertNull($node->getPriceQuantity());
+        self::assertNull($node->getPriceQuantity());
         $node->setPriceQuantity($value);
-        static::assertSame($value, $node->getPriceQuantity());
+        self::assertSame($value, $node->getPriceQuantity());
     }
 
     public function test_set_get_quantity_min(): void
@@ -62,9 +65,9 @@ class ArticleOrderDetailsTest extends TestCase
         $node = new ArticleOrderDetails();
         $value = random_int(10, 1000);
 
-        static::assertNull($node->getQuantityMin());
+        self::assertNull($node->getQuantityMin());
         $node->setQuantityMin($value);
-        static::assertSame($value, $node->getQuantityMin());
+        self::assertSame($value, $node->getQuantityMin());
     }
 
     public function test_set_get_quantity_interval(): void
@@ -72,9 +75,9 @@ class ArticleOrderDetailsTest extends TestCase
         $node = new ArticleOrderDetails();
         $value = random_int(10, 1000);
 
-        static::assertNull($node->getQuantityInterval());
+        self::assertNull($node->getQuantityInterval());
         $node->setQuantityInterval($value);
-        static::assertSame($value, $node->getQuantityInterval());
+        self::assertSame($value, $node->getQuantityInterval());
     }
 
     public function test_serialize_with_null_values(): void
@@ -85,7 +88,7 @@ class ArticleOrderDetailsTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_order_details_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -96,6 +99,6 @@ class ArticleOrderDetailsTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_order_details_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

@@ -16,7 +16,10 @@ use TemplateProvider\BMEcat\Node\Mime;
 use TemplateProvider\BMEcat\Node\NewCatalog;
 use TemplateProvider\BMEcat\Node\NewCatalogArticle;
 
-class DocumentTest extends TestCase
+/**
+ * @internal
+ */
+final class DocumentTest extends TestCase
 {
     private SerializationContext $context;
 
@@ -134,7 +137,7 @@ class DocumentTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/document_with_null_values.xml');
         $actual = $this->builder->toString();
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     /**
@@ -146,6 +149,6 @@ class DocumentTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/document_without_null_values.xml');
         $actual = $this->builder->toString();
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

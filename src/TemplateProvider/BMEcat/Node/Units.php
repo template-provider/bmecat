@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 class Units extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Unit::class)]
+    #[Serializer\Type(Unit::class)]
     #[Serializer\SerializedName('UNIT')]
     protected array $units = [];
 

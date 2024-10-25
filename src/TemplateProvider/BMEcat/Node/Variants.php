@@ -9,10 +9,7 @@ use JMS\Serializer\Annotation as Serializer;
 #[Serializer\XmlRoot('VARIANTS')]
 class Variants extends AbstractNode
 {
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\Variant[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\Variant> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Variant>')]
     #[Serializer\XmlList(inline: true, entry: 'VARIANT')]

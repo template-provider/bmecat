@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 class ClassificationGroupSynonyms extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Synonym::class)]
+    #[Serializer\Type(Synonym::class)]
     #[Serializer\SerializedName('SYNONYM')]
     protected array $synonyms = [];
 

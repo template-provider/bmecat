@@ -38,20 +38,14 @@ class CatalogStructure extends AbstractNode
     #[Serializer\SerializedName('GROUP_ORDER')]
     protected ?string $groupOrder = null;
 
-    /**
-     *
-     * @var null|\TemplateProvider\BMEcat\Node\Mime[]
-     */
+    /** @var null|array<\TemplateProvider\BMEcat\Node\Mime> */
     #[Serializer\Expose]
     #[Serializer\SerializedName('MIME_INFO')]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Mime>')]
     #[Serializer\XmlList(entry: 'MIME')]
     protected ?array $mimes = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\Keyword[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\Keyword> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Keyword>')]
     #[Serializer\XmlList(inline: true, entry: 'KEYWORD')]

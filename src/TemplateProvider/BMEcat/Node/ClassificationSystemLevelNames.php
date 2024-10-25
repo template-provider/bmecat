@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 class ClassificationSystemLevelNames extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationSystemLevelName::class)]
+    #[Serializer\Type(ClassificationSystemLevelName::class)]
     #[Serializer\SerializedName('CLASSIFICATION_SYSTEM_LEVEL_NAME')]
     protected array $levelName = [];
 

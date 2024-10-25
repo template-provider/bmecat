@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class CatalogTest extends TestCase
+/**
+ * @internal
+ */
+final class CatalogTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -24,7 +27,7 @@ class CatalogTest extends TestCase
         $value = sha1(uniqid(microtime(false), true));
 
         $node->setId($value);
-        static::assertSame($value, $node->getId());
+        self::assertSame($value, $node->getId());
     }
 
     public function test_set_get_version(): void
@@ -33,7 +36,7 @@ class CatalogTest extends TestCase
         $value = sha1(uniqid(microtime(false), true));
 
         $node->setVersion($value);
-        static::assertSame($value, $node->getVersion());
+        self::assertSame($value, $node->getVersion());
     }
 
     public function test_set_get_language(): void
@@ -42,7 +45,7 @@ class CatalogTest extends TestCase
         $value = sha1(uniqid(microtime(false), true));
 
         $node->setLanguage($value);
-        static::assertSame($value, $node->getLanguage());
+        self::assertSame($value, $node->getLanguage());
     }
 
     public function test_set_get_date_time(): void
@@ -51,7 +54,7 @@ class CatalogTest extends TestCase
         $dateTime = new DateTime();
 
         $node->setDateTime($dateTime);
-        static::assertSame($dateTime, $node->getDateTime());
+        self::assertSame($dateTime, $node->getDateTime());
     }
 
     public function test_serialize_with_null_values(): void
@@ -62,7 +65,7 @@ class CatalogTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_catalog_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -73,6 +76,6 @@ class CatalogTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_catalog_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

@@ -78,7 +78,7 @@ class DocumentBuilder
     private function getExpressionLanguage(): ExpressionLanguage
     {
         $expressionLanguage = new ExpressionLanguage();
-        $expressionLanguage->register('empty', fn($str) => $str, fn($arguments, $str): bool => empty($str));
+        $expressionLanguage->register('empty', static fn ($str) => $str, static fn ($arguments, $str): bool => empty($str));
 
         return $expressionLanguage;
     }

@@ -15,10 +15,7 @@ class UpdatePrices extends AbstractNode
     #[Serializer\XmlAttribute]
     protected int $type = 0;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\NewCatalogArticle[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\NewCatalogArticle> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Article>')]
     #[Serializer\XmlList(inline: true, entry: 'ARTICLE')]

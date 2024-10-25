@@ -19,10 +19,7 @@ class FeatureGroup extends AbstractNode
     #[Serializer\SerializedName('FEATURE_GROUP_NAME')]
     protected string $featureGroupName = '';
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\FeatureTemplate[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\FeatureTemplate> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureTemplate>')]
     #[Serializer\SerializedName('FEATURE_TEMPLATE')]

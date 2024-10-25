@@ -19,10 +19,7 @@ class CatalogGroupSystem extends AbstractNode
     #[Serializer\SerializedName('CATALOG_SYSTEM_NAME')]
     protected ?string $catalogSystemName = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\CatalogStructure[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\CatalogStructure> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\CatalogStructure>')]
     #[Serializer\XmlList(inline: true, entry: 'CATALOG_STRUCTURE')]

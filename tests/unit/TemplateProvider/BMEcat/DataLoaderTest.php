@@ -8,7 +8,10 @@ use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 use TemplateProvider\BMEcat\Node\Document;
 
-class DataLoaderTest extends TestCase
+/**
+ * @internal
+ */
+final class DataLoaderTest extends TestCase
 {
     private DocumentBuilder $builder;
 
@@ -31,20 +34,20 @@ class DataLoaderTest extends TestCase
         $this->builder->setDocument($document);
 
         $header = $this->builder->getDocument()->getHeader();
-        static::assertSame($info, $header->getGeneratorInfo());
+        self::assertSame($info, $header->getGeneratorInfo());
     }
 
     public function test_can_create_default_document(): void
     {
         $document = NodeBuilder::fromArray([], new Document());
-        static::assertInstanceOf(Document::class, $document);
+        self::assertInstanceOf(Document::class, $document);
     }
 
     public function test_converts_attribute_name_to_method_name(): void
     {
         $attribute = 'my_test_attribute';
-        $method    = \TemplateProvider\BMEcat\DataLoader::formatAttribute($attribute);
+        $method    = DataLoader::formatAttribute($attribute);
 
-        static::assertSame('MyTestAttribute', $method);
+        self::assertSame('MyTestAttribute', $method);
     }
 }

@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 class ClassificationGroups extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationGroup::class)]
+    #[Serializer\Type(ClassificationGroup::class)]
     #[Serializer\SerializedName('CLASSIFICATION_GROUP')]
     protected array $classificationGroups = [];
 

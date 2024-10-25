@@ -10,14 +10,14 @@ use JMS\Serializer\Annotation as Serializer;
 class ArticlePriceDetail extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\Type(DateTime::class)]
     #[Serializer\SerializedName('DATETIME')]
-    protected ?\TemplateProvider\BMEcat\Node\DateTime $dateTimeStart = null;
+    protected ?DateTime $dateTimeStart = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\Type(DateTime::class)]
     #[Serializer\SerializedName('DATETIME')]
-    protected ?\TemplateProvider\BMEcat\Node\DateTime $dateTimeEnd = null;
+    protected ?DateTime $dateTimeEnd = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('bool')]
@@ -25,10 +25,7 @@ class ArticlePriceDetail extends AbstractNode
     #[Serializer\XmlElement(cdata: false)]
     protected ?bool $dailyPrice = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\ArticlePrice[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\ArticlePrice> */
     #[Serializer\Expose]
     #[Serializer\SerializedName('ARTICLE_PRICE_DETAILS')]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticlePrice>')]

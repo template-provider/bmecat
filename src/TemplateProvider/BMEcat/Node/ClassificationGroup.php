@@ -27,12 +27,12 @@ class ClassificationGroup extends AbstractNode
     #[Serializer\Expose]
     #[Serializer\Type('TemplateProvider\BMEcat\Node\ClassificationGroupsSynonyms')]
     #[Serializer\SerializedName('CLASSIFICATION_GROUP_SYNONYMS')]
-    protected ?\TemplateProvider\BMEcat\Node\ClassificationGroupsSynonymsNode $classificationGroupsSynonyms = null;
+    protected ?ClassificationGroupsSynonymsNode $classificationGroupsSynonyms = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('TemplateProvider\BMEcat\Node\ClassificationGroupsFeatureTemplates')]
     #[Serializer\SerializedName('CLASSIFICATION_GROUP_FEATURE_TEMPLATES')]
-    protected ?\TemplateProvider\BMEcat\Node\ClassificationGroupsFeatureTemplatesNode $classificationGroupsFeatureTemplates = null;
+    protected ?ClassificationGroupsFeatureTemplatesNode $classificationGroupsFeatureTemplates = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]

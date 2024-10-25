@@ -30,14 +30,11 @@ class Catalog extends AbstractNode
     protected ?string $name = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\Type(DateTime::class)]
     #[Serializer\SerializedName('DATETIME')]
     protected ?DateTime $dateTime = null;
 
-    /**
-     *
-     * @var Territory[]
-     */
+    /** @var array<Territory> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Territory>')]
     #[Serializer\SerializedName('TERRITORY')]
@@ -54,9 +51,9 @@ class Catalog extends AbstractNode
     protected ?string $mimeRoot = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\PriceFlag::class)]
+    #[Serializer\Type(PriceFlag::class)]
     #[Serializer\SerializedName('PRICE_FLAG')]
-    protected ?\TemplateProvider\BMEcat\Node\PriceFlag $priceFlag = null;
+    protected ?PriceFlag $priceFlag = null;
 
     public function getId(): string
     {

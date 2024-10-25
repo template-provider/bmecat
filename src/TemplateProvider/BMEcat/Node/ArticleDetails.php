@@ -29,10 +29,7 @@ class ArticleDetails extends AbstractNode
     #[Serializer\SerializedName('SUPPLIER_ALT_AID')]
     protected ?string $supplierAltAid = null;
 
-    /**
-     *
-     * @var BuyerAid[]
-     */
+    /** @var array<BuyerAid> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\BuyerAid>')]
     #[Serializer\XmlList(inline: true, entry: 'BUYER_AID')]
@@ -69,19 +66,13 @@ class ArticleDetails extends AbstractNode
     #[Serializer\XmlElement(cdata: false)]
     protected ?float $deliveryTime = null;
 
-    /**
-     *
-     * @var SpecialTreatmentClass[]
-     */
+    /** @var array<SpecialTreatmentClass> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\SpecialTreatmentClass>')]
     #[Serializer\XmlList(inline: true, entry: 'SPECIAL_TREATMENT_CLASS')]
     protected ?array $specialTreatmentClasses = null;
 
-    /**
-     *
-     * @var Keyword[]
-     */
+    /** @var array<Keyword> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Keyword>')]
     #[Serializer\XmlList(inline: true, entry: 'KEYWORD')]
@@ -103,10 +94,7 @@ class ArticleDetails extends AbstractNode
     #[Serializer\XmlElement(cdata: false)]
     protected ?int $articleOrder = null;
 
-    /**
-     *
-     * @var ArticleStatus[]
-     */
+    /** @var array<ArticleStatus> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleStatus>')]
     #[Serializer\XmlList(inline: true, entry: 'ARTICLE_STATUS')]
@@ -153,7 +141,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @return BuyerAid[]|null
+     * @return null|array<BuyerAid>
      */
     public function getBuyerAids(): ?array
     {
@@ -161,7 +149,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @param BuyerAid[]|null $buyerAids
+     * @param null|array<BuyerAid> $buyerAids
      */
     public function setBuyerAids(?array $buyerAids): void
     {
@@ -234,7 +222,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @return null|SpecialTreatmentClass[]
+     * @return null|array<SpecialTreatmentClass>
      */
     public function getSpecialTreatmentClasses(): ?array
     {
@@ -242,7 +230,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @param null|SpecialTreatmentClass[] $specialTreatmentClasses
+     * @param null|array<SpecialTreatmentClass> $specialTreatmentClasses
      */
     public function setSpecialTreatmentClasses(?array $specialTreatmentClasses): void
     {
@@ -255,7 +243,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @return null|Keyword[]
+     * @return null|array<Keyword>
      */
     public function getKeywords(): ?array
     {
@@ -263,7 +251,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @param null|Keyword[] $keywords
+     * @param null|array<Keyword> $keywords
      */
     public function setKeywords(?array $keywords): void
     {
@@ -306,7 +294,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @return null|ArticleStatus[]
+     * @return null|array<ArticleStatus>
      */
     public function getArticleStatus(): ?array
     {
@@ -314,7 +302,7 @@ class ArticleDetails extends AbstractNode
     }
 
     /**
-     * @param null|ArticleStatus[] $articleStatus
+     * @param null|array<ArticleStatus> $articleStatus
      */
     public function setArticleStatus(?array $articleStatus): void
     {

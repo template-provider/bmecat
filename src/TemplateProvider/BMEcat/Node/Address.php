@@ -63,10 +63,6 @@ class Address extends AbstractNode
     #[Serializer\SerializedName('STATE')]
     protected ?string $state = null;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('COUNTRY')]

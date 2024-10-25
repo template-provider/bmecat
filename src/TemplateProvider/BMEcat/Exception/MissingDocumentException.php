@@ -6,6 +6,4 @@ namespace TemplateProvider\BMEcat\Exception;
 
 use Exception;
 
-class MissingDocumentException extends Exception
-{
-}
+class MissingDocumentException extends Exception {}

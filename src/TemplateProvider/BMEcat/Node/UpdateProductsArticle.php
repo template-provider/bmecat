@@ -16,13 +16,10 @@ class UpdateProductsArticle extends AbstractNode
 
     #[Serializer\Expose]
     #[Serializer\SerializedName('ARTICLE_DETAILS')]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ArticleDetails::class)]
+    #[Serializer\Type(ArticleDetails::class)]
     protected ArticleDetails $detail;
 
-    /**
-     *
-     * @var null|\TemplateProvider\BMEcat\Node\ArticleFeatures[]
-     */
+    /** @var null|array<\TemplateProvider\BMEcat\Node\ArticleFeatures> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleFeatures>')]
     #[Serializer\XmlList(inline: true, entry: 'ARTICLE_FEATURES')]
@@ -30,33 +27,24 @@ class UpdateProductsArticle extends AbstractNode
 
     #[Serializer\Expose]
     #[Serializer\SerializedName('ARTICLE_ORDER_DETAILS')]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ArticleOrderDetails::class)]
+    #[Serializer\Type(ArticleOrderDetails::class)]
     protected ArticleOrderDetails $orderDetails;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\ArticlePrice[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\ArticlePrice> */
     #[Serializer\Expose]
     #[Serializer\SerializedName('ARTICLE_PRICE_DETAILS')]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticlePrice>')]
     #[Serializer\XmlList(entry: 'ARTICLE_PRICE')]
     protected array $prices = [];
 
-    /**
-     *
-     * @var null|\TemplateProvider\BMEcat\Node\Mime[]
-     */
+    /** @var null|array<\TemplateProvider\BMEcat\Node\Mime> */
     #[Serializer\Expose]
     #[Serializer\SerializedName('MIME_INFO')]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Mime>')]
     #[Serializer\XmlList(entry: 'MIME')]
     protected ?array $mimes = null;
 
-    /**
-     *
-     * @var null|\TemplateProvider\BMEcat\Node\ArticleReference[]
-     */
+    /** @var null|array<\TemplateProvider\BMEcat\Node\ArticleReference> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleReference>')]
     #[Serializer\XmlList(inline: true, entry: 'ARTICLE_REFERENCE')]

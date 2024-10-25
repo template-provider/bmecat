@@ -15,17 +15,17 @@ class Header extends AbstractNode
     protected ?string $generatorInfo = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Catalog::class)]
+    #[Serializer\Type(Catalog::class)]
     #[Serializer\SerializedName('CATALOG')]
     protected Catalog $catalog;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Supplier::class)]
+    #[Serializer\Type(Supplier::class)]
     #[Serializer\SerializedName('SUPPLIER')]
     protected Supplier $supplier;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Buyer::class)]
+    #[Serializer\Type(Buyer::class)]
     #[Serializer\SerializedName('BUYER')]
     protected ?Buyer $buyer = null;
 

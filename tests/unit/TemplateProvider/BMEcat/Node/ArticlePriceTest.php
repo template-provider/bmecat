@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class ArticlePriceTest extends TestCase
+/**
+ * @internal
+ */
+final class ArticlePriceTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -23,9 +26,9 @@ class ArticlePriceTest extends TestCase
         $node = new ArticlePrice();
         $value = (float) random_int(10, 1000);
 
-        static::assertNull($node->getPrice());
+        self::assertNull($node->getPrice());
         $node->setPrice($value);
-        static::assertSame($value, $node->getPrice());
+        self::assertSame($value, $node->getPrice());
     }
 
     public function test_set_get_currency(): void
@@ -33,9 +36,9 @@ class ArticlePriceTest extends TestCase
         $node = new ArticlePrice();
         $value = substr(sha1(uniqid(microtime(false), true)), 0, 3);
 
-        static::assertNull($node->getCurrency());
+        self::assertNull($node->getCurrency());
         $node->setCurrency($value);
-        static::assertSame($value, $node->getCurrency());
+        self::assertSame($value, $node->getCurrency());
     }
 
     public function test_serialize_with_null_values(): void
@@ -46,7 +49,7 @@ class ArticlePriceTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_price_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -57,6 +60,6 @@ class ArticlePriceTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_price_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

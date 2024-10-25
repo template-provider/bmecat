@@ -15,14 +15,14 @@ class Agreement extends AbstractNode
     protected string $id = '';
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\Type(DateTime::class)]
     #[Serializer\SerializedName('DATETIME')]
-    protected ?\TemplateProvider\BMEcat\Node\DateTime $dateTimeStart = null;
+    protected ?DateTime $dateTimeStart = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\DateTime::class)]
+    #[Serializer\Type(DateTime::class)]
     #[Serializer\SerializedName('DATETIME')]
-    protected ?\TemplateProvider\BMEcat\Node\DateTime $dateTimeEnd = null;
+    protected ?DateTime $dateTimeEnd = null;
 
     public function getId(): string
     {

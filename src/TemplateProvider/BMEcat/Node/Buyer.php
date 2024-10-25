@@ -10,9 +10,9 @@ use JMS\Serializer\Annotation as Serializer;
 class Buyer extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\BuyerId::class)]
+    #[Serializer\Type(BuyerId::class)]
     #[Serializer\SerializedName('BUYER_ID')]
-    protected ?\TemplateProvider\BMEcat\Node\BuyerId $id = null;
+    protected ?BuyerId $id = null;
 
     #[Serializer\Expose]
     #[Serializer\Type('string')]
@@ -20,7 +20,7 @@ class Buyer extends AbstractNode
     protected string $name = '';
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Address::class)]
+    #[Serializer\Type(Address::class)]
     #[Serializer\SerializedName('ADDRESS')]
     protected ?Address $address = null;
 

@@ -25,7 +25,7 @@ class NodeBuilder
                 throw new UnknownKeyException('There is no setter for the property ' . $name . ' in the class ' . $instance::class);
             }
 
-            if (is_scalar($value) || is_object($value)) {
+            if (\is_scalar($value) || \is_object($value)) {
                 $instance->{$setterName}($value);
 
                 continue;
@@ -52,7 +52,7 @@ class NodeBuilder
             }
 
             $paramType = $firstSetterParam->getType()->getName();
-            $valueType = gettype($value);
+            $valueType = \gettype($value);
 
             if ($paramType !== $valueType && class_exists($paramType)) {
                 $value = self::fromArray($value, new $paramType());

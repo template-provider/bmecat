@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class ArticleTest extends TestCase
+/**
+ * @internal
+ */
+final class ArticleTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -23,9 +26,9 @@ class ArticleTest extends TestCase
         $node = new NewCatalogArticle('foo');
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertSame('foo', $node->getId());
+        self::assertSame('foo', $node->getId());
         $node->setId($value);
-        static::assertSame($value, $node->getId());
+        self::assertSame($value, $node->getId());
     }
 
     public function test_set_get_details(): void
@@ -34,7 +37,7 @@ class ArticleTest extends TestCase
         $details = new ArticleDetails();
 
         $node->setDetail($details);
-        static::assertSame($details, $node->getDetail());
+        self::assertSame($details, $node->getDetail());
     }
 
     public function test_add_get_features(): void
@@ -46,14 +49,14 @@ class ArticleTest extends TestCase
         ];
 
         $node = new NewCatalogArticle('foo');
-        static::assertEmpty($node->getFeatures());
-        static::assertNull($node->getFeatures());
+        self::assertEmpty($node->getFeatures());
+        self::assertNull($node->getFeatures());
 
         foreach ($features as $featureBlock) {
             $node->addFeatures($featureBlock);
         }
 
-        static::assertSame($features, $node->getFeatures());
+        self::assertSame($features, $node->getFeatures());
     }
 
     public function test_add_get_prices(): void
@@ -65,14 +68,14 @@ class ArticleTest extends TestCase
         ];
 
         $node = new NewCatalogArticle('foo');
-        static::assertEmpty($node->getPrices());
-        static::assertSame([], $node->getPrices());
+        self::assertEmpty($node->getPrices());
+        self::assertSame([], $node->getPrices());
 
         foreach ($prices as $price) {
             $node->addPrice($price);
         }
 
-        static::assertSame($prices, $node->getPrices());
+        self::assertSame($prices, $node->getPrices());
     }
 
     public function test_add_get_article_order_details(): void
@@ -81,7 +84,7 @@ class ArticleTest extends TestCase
         $value = new ArticleOrderDetails();
 
         $node->setOrderDetails($value);
-        static::assertSame($value, $node->getOrderDetails());
+        self::assertSame($value, $node->getOrderDetails());
     }
 
     public function test_serialize_with_null_values(): void
@@ -97,7 +100,7 @@ class ArticleTest extends TestCase
 
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -114,6 +117,6 @@ class ArticleTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_article_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

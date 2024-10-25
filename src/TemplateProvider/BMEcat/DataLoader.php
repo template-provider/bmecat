@@ -30,7 +30,7 @@ class DataLoader
         foreach ($data as $key => $value) {
             switch (strtolower($key)) {
                 case 'nullable':
-                    if (true === is_bool($value)) {
+                    if (true === \is_bool($value)) {
                         $builder->setSerializeNull($value);
                     }
 
@@ -39,13 +39,13 @@ class DataLoader
                 case 'document':
                     self::loadDocument($value, $document);
 
-                break;
+                    break;
 
                 case 'loader':
                     continue 2;
 
                 default:
-                    throw new UnknownKeyException(sprintf('Unknown key %s to load', $key));
+                    throw new UnknownKeyException(\sprintf('Unknown key %s to load', $key));
             }
         }
     }
@@ -70,7 +70,7 @@ class DataLoader
                     break;
 
                 default:
-                    throw new UnknownKeyException(sprintf('Unknown key document.%s to load', $key));
+                    throw new UnknownKeyException(\sprintf('Unknown key document.%s to load', $key));
             }
         }
     }
@@ -102,7 +102,7 @@ class DataLoader
                     break;
 
                 default:
-                    throw new UnknownKeyException(sprintf('Unknown key header.%s to load', $key));
+                    throw new UnknownKeyException(\sprintf('Unknown key header.%s to load', $key));
             }
         }
     }
@@ -116,7 +116,7 @@ class DataLoader
             match (strtolower($key)) {
                 'id', 'version', 'language' => self::loadScalarData($key, $value, $catalog),
                 'datetime' => self::loadArrayData($value, $catalog->getDateTime()),
-                default => throw new UnknownKeyException(sprintf('Unknown key header.%s to load', $key)),
+                default => throw new UnknownKeyException(\sprintf('Unknown key header.%s to load', $key)),
             };
         }
     }
@@ -136,8 +136,10 @@ class DataLoader
 
     public static function formatAttribute(string $attribute): string
     {
-        return \preg_replace_callback(
-            '/(^|_|\.)+(.)/', fn($match): string => ('.' === $match[1] ? '_' : '') . strtoupper($match[2]), $attribute
+        return preg_replace_callback(
+            '/(^|_|\.)+(.)/',
+            static fn ($match): string => ('.' === $match[1] ? '_' : '') . strtoupper($match[2]),
+            $attribute
         );
     }
 }

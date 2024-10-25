@@ -35,9 +35,9 @@ class ClassificationGroupFeatureTemplate extends AbstractNode
     protected ?int $order = null;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\FeatureAllowedValues::class)]
+    #[Serializer\Type(FeatureAllowedValues::class)]
     #[Serializer\SerializedName('FT_ALLOWED_VALUES')]
-    protected ?\TemplateProvider\BMEcat\Node\FeatureAllowedValues $featureAllowedValues = null;
+    protected ?FeatureAllowedValues $featureAllowedValues = null;
 
     public function getIdRef(): string
     {

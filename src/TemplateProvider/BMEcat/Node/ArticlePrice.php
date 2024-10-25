@@ -41,10 +41,7 @@ class ArticlePrice extends AbstractNode
     #[Serializer\SerializedName('LOWER_BOUND')]
     protected ?float $lowerBound = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\Territory[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\Territory> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Territory>')]
     #[Serializer\SerializedName('TERRITORY')]

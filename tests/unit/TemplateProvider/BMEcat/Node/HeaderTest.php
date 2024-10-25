@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class HeaderTest extends TestCase
+/**
+ * @internal
+ */
+final class HeaderTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -23,9 +26,9 @@ class HeaderTest extends TestCase
         $node = new Header();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getGeneratorInfo());
+        self::assertNull($node->getGeneratorInfo());
         $node->setGeneratorInfo($value);
-        static::assertSame($value, $node->getGeneratorInfo());
+        self::assertSame($value, $node->getGeneratorInfo());
     }
 
     public function test_set_get_supplier(): void
@@ -34,7 +37,7 @@ class HeaderTest extends TestCase
         $supplier = new Supplier();
 
         $header->setSupplier($supplier);
-        static::assertSame($supplier, $header->getSupplier());
+        self::assertSame($supplier, $header->getSupplier());
     }
 
     public function test_set_get_catalog(): void
@@ -43,7 +46,7 @@ class HeaderTest extends TestCase
         $catalog = new Catalog();
 
         $header->setCatalog($catalog);
-        static::assertSame($catalog, $header->getCatalog());
+        self::assertSame($catalog, $header->getCatalog());
     }
 
     public function test_serialize_with_null_values(): void
@@ -60,7 +63,7 @@ class HeaderTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_header_with_null_values.xml');
         $actual = $this->serializer->serialize($header, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -77,6 +80,6 @@ class HeaderTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_header_without_null_values.xml');
         $actual = $this->serializer->serialize($header, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

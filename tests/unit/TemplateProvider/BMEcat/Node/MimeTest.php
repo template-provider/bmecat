@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class MimeTest extends TestCase
+/**
+ * @internal
+ */
+final class MimeTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -24,7 +27,7 @@ class MimeTest extends TestCase
         $value = sha1(uniqid(microtime(false), true));
 
         $node->setType($value);
-        static::assertSame($value, $node->getType());
+        self::assertSame($value, $node->getType());
     }
 
     public function test_set_get_source(): void
@@ -32,9 +35,9 @@ class MimeTest extends TestCase
         $node = new Mime();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertSame('', $node->getSource());
+        self::assertSame('', $node->getSource());
         $node->setSource($value);
-        static::assertSame($value, $node->getSource());
+        self::assertSame($value, $node->getSource());
     }
 
     public function test_set_get_purpose(): void
@@ -42,9 +45,9 @@ class MimeTest extends TestCase
         $node = new Mime();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getPurpose());
+        self::assertNull($node->getPurpose());
         $node->setPurpose($value);
-        static::assertSame($value, $node->getPurpose());
+        self::assertSame($value, $node->getPurpose());
     }
 
     public function test_serialize_with_null_values(): void
@@ -55,7 +58,7 @@ class MimeTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_mime_info_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -66,6 +69,6 @@ class MimeTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_mime_info_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 class FeatureAllowedValues extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\AllowedValueIdRef::class)]
+    #[Serializer\Type(AllowedValueIdRef::class)]
     #[Serializer\SerializedName('ALLOWED_VALUE_IDREF')]
     protected array $allowedValues = [];
 

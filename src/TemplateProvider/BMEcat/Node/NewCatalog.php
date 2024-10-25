@@ -9,46 +9,31 @@ use JMS\Serializer\Annotation as Serializer;
 #[Serializer\XmlRoot('T_NEW_CATALOG')]
 class NewCatalog extends AbstractNode
 {
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\FeatureSystem[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\FeatureSystem> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureSystem>')]
     #[Serializer\XmlList(inline: true, entry: 'FEATURE_SYSTEM')]
     protected ?array $featuresSystems = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\ClassificationSystem[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\ClassificationSystem> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ClassificationSystem>')]
     #[Serializer\XmlList(inline: true, entry: 'CLASSIFICATION_SYSTEM')]
     protected ?array $classificationSystems = null;
 
-    /**
-     *
-     * @var null|\TemplateProvider\BMEcat\Node\NewCatalogArticle[]
-     */
+    /** @var null|array<\TemplateProvider\BMEcat\Node\NewCatalogArticle> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\NewCatalogArticle>')]
     #[Serializer\XmlList(inline: true, entry: 'ARTICLE')]
     protected ?array $articles = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\CatalogGroupSystem[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\CatalogGroupSystem> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\CatalogGroupSystem>')]
     #[Serializer\XmlList(inline: true, entry: 'CATALOG_GROUP_SYSTEM')]
     protected ?array $catalogGroupSystems = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticleToCatalogGroupMap>')]
     #[Serializer\XmlList(inline: true, entry: 'ARTICLE_TO_CATALOGGROUP_MAP')]

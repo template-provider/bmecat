@@ -19,10 +19,7 @@ class FeatureSystem extends AbstractNode
     #[Serializer\SerializedName('FEATURE_SYSTEM_DESCR')]
     protected ?string $featureSystemDescription = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\FeatureGroup[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\FeatureGroup> */
     #[Serializer\Expose]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureGroup>')]
     #[Serializer\SerializedName('FEATURE_GROUP')]

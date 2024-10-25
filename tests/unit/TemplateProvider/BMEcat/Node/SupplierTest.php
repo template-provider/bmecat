@@ -9,7 +9,10 @@ use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
 use PHPUnit\Framework\TestCase;
 
-class SupplierTest extends TestCase
+/**
+ * @internal
+ */
+final class SupplierTest extends TestCase
 {
     private Serializer $serializer;
 
@@ -23,9 +26,9 @@ class SupplierTest extends TestCase
         $node = new Supplier();
         $value = sha1(uniqid(microtime(false), true));
 
-        static::assertNull($node->getId());
+        self::assertNull($node->getId());
         $node->setId($value);
-        static::assertSame($value, $node->getId());
+        self::assertSame($value, $node->getId());
     }
 
     public function test_set_get_name(): void
@@ -34,7 +37,7 @@ class SupplierTest extends TestCase
         $value = sha1(uniqid(microtime(false), true));
 
         $node->setName($value);
-        static::assertSame($value, $node->getName());
+        self::assertSame($value, $node->getName());
     }
 
     public function test_serialize_with_null_values(): void
@@ -47,7 +50,7 @@ class SupplierTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_supplier_with_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function test_serialize_without_null_values(): void
@@ -60,6 +63,6 @@ class SupplierTest extends TestCase
         $expected = file_get_contents(__DIR__ . '/../Fixtures/empty_supplier_without_null_values.xml');
         $actual = $this->serializer->serialize($node, 'xml', $context);
 
-        static::assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

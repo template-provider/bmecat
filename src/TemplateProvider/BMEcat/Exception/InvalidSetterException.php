@@ -6,6 +6,4 @@ namespace TemplateProvider\BMEcat\Exception;
 
 use Exception;
 
-class InvalidSetterException extends Exception
-{
-}
+class InvalidSetterException extends Exception {}

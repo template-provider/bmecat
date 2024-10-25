@@ -6,6 +6,4 @@ namespace TemplateProvider\BMEcat\Exception;
 
 use Exception;
 
-class UnknownKeyException extends Exception
-{
-}
+class UnknownKeyException extends Exception {}

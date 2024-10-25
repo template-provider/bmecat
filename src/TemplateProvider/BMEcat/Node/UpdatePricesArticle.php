@@ -14,10 +14,7 @@ class UpdatePricesArticle extends AbstractNode
     #[Serializer\SerializedName('SUPPLIER_AID')]
     protected string $id;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\ArticlePrice[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\ArticlePrice> */
     #[Serializer\Expose]
     #[Serializer\SerializedName('ARTICLE_PRICE_DETAILS')]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\ArticlePrice>')]

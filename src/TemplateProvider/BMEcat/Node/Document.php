@@ -30,12 +30,12 @@ class Document extends AbstractNode
     protected string $nullableLocation = 'http://www.w3.org/1999/xhtml.xsd';
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Header::class)]
+    #[Serializer\Type(Header::class)]
     #[Serializer\SerializedName('HEADER')]
     protected Header $header;
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\NewCatalog::class)]
+    #[Serializer\Type(NewCatalog::class)]
     #[Serializer\SerializedName('T_NEW_CATALOG')]
     protected NewCatalog $catalog;
 

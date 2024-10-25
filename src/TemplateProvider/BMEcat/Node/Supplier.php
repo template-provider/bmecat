@@ -20,14 +20,11 @@ class Supplier extends AbstractNode
     protected string $name = '';
 
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\Address::class)]
+    #[Serializer\Type(Address::class)]
     #[Serializer\SerializedName('ADDRESS')]
     protected ?Address $address = null;
 
-    /**
-     *
-     * @var \TemplateProvider\BMEcat\Node\Mime[]
-     */
+    /** @var array<\TemplateProvider\BMEcat\Node\Mime> */
     #[Serializer\Expose]
     #[Serializer\SerializedName('MIME_INFO')]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\Mime>')]

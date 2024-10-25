@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 class ClassificationGroupFeatureTemplates extends AbstractNode
 {
     #[Serializer\Expose]
-    #[Serializer\Type(\TemplateProvider\BMEcat\Node\ClassificationGroupFeatureTemplate::class)]
+    #[Serializer\Type(ClassificationGroupFeatureTemplate::class)]
     #[Serializer\SerializedName('CLASSIFICATION_GROUP_FEATURE_TEMPLATE')]
     protected array $featureTemplates = [];
 

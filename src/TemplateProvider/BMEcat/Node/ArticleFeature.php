@@ -21,10 +21,7 @@ class ArticleFeature extends AbstractNode
     #[Serializer\Exclude(if: '!empty(object.getValue())')]
     protected ?string $variants = null;
 
-    /**
-     *
-     * @var FeatureValue[]
-     */
+    /** @var array<FeatureValue> */
     #[Serializer\Expose]
     #[Serializer\SerializedName('FVALUE')]
     #[Serializer\Type('array<TemplateProvider\BMEcat\Node\FeatureValue>')]
@@ -37,28 +34,16 @@ class ArticleFeature extends AbstractNode
     #[Serializer\SerializedName('FUNIT')]
     protected ?string $unit = null;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('FORDER')]
     protected ?string $order = null;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('FDESCR')]
     protected ?string $description = null;
 
-    /**
-     *
-     * @var string
-     */
     #[Serializer\Expose]
     #[Serializer\Type('string')]
     #[Serializer\SerializedName('FVALUE_DETAILS')]
@@ -85,7 +70,7 @@ class ArticleFeature extends AbstractNode
     }
 
     /**
-     * @return null|FeatureValue[]
+     * @return null|array<FeatureValue>
      */
     public function getValue(): ?array
     {
@@ -93,7 +78,7 @@ class ArticleFeature extends AbstractNode
     }
 
     /**
-     * @param null|FeatureValue[] $value
+     * @param null|array<FeatureValue> $value
      */
     public function setValue(?array $value): void
     {
